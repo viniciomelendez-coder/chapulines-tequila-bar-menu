@@ -18,16 +18,18 @@
 
   .bg-grid {
     background-image:
-      radial-gradient(circle at 20% 20%, rgba(45,184,75,0.16) 0%, transparent 22%),
-      linear-gradient(120deg, transparent 0%, rgba(45,184,75,0.10) 45%, transparent 60%),
-      linear-gradient(rgba(45,184,75,0.055) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(45,184,75,0.045) 1px, transparent 1px);
+      radial-gradient(circle at 50% 18%, rgba(45,184,75,0.18) 0%, rgba(45,184,75,0.08) 22%, transparent 48%),
+      linear-gradient(rgba(45,184,75,0.045) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(45,184,75,0.038) 1px, transparent 1px);
     background-size:
-      420px 420px,
-      520px 520px,
+      100% 100%,
       32px 32px,
       32px 32px;
-    animation: grid-glow 10s ease-in-out infinite alternate;
+    background-repeat:
+      no-repeat,
+      repeat,
+      repeat;
+    animation: grid-glow 8s ease-in-out infinite alternate;
   }
 
   .active\:scale-97:active { transform: scale(0.97); }
@@ -36,16 +38,14 @@
 @keyframes grid-glow {
   0% {
     background-position:
-      0px 0px,
-      -280px -280px,
+      50% -40px,
       0px 0px,
       0px 0px;
   }
   100% {
     background-position:
-      90px 130px,
-      280px 280px,
-      16px 16px,
-      16px 16px;
+      50% 70px,
+      8px 8px,
+      8px 8px;
   }
 }
