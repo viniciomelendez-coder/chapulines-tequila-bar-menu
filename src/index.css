@@ -17,56 +17,20 @@
   .scrollbar-none::-webkit-scrollbar { display: none; }
 
   .bg-grid {
-    position: relative;
-    isolation: isolate;
-    overflow: hidden;
-    background-color: #101410;
+    background-color: #0e0f0e;
     background-image:
-      linear-gradient(rgba(45,184,75,0.045) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(45,184,75,0.04) 1px, transparent 1px);
-    background-size: 32px 32px;
-  }
-
-  .bg-grid::before {
-    content: "";
-    position: absolute;
-    inset: -18%;
-    pointer-events: none;
-    background:
-      radial-gradient(circle at 50% 18%, rgba(45,184,75,0.34), transparent 30%),
-      radial-gradient(circle at 22% 48%, rgba(45,184,75,0.18), transparent 28%),
-      radial-gradient(circle at 78% 58%, rgba(45,184,75,0.16), transparent 30%);
-    filter: blur(20px);
-    opacity: 0.72;
-    animation: ambient-glow 9s ease-in-out infinite alternate;
+      radial-gradient(circle at 50% 12%, rgba(45,184,75,0.08) 0%, rgba(45,184,75,0.035) 24%, transparent 52%),
+      linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.022) 1px, transparent 1px);
+    background-size:
+      100% 520px,
+      32px 32px,
+      32px 32px;
+    background-repeat:
+      no-repeat,
+      repeat,
+      repeat;
   }
 
   .active\:scale-97:active { transform: scale(0.97); }
-}
-
-@keyframes ambient-glow {
-  0% {
-    transform: translate3d(-8px, -8px, 0) scale(1);
-    opacity: 0.55;
-  }
-  50% {
-    transform: translate3d(10px, 8px, 0) scale(1.05);
-    opacity: 0.85;
-  }
-  100% {
-    transform: translate3d(14px, -4px, 0) scale(1.02);
-    opacity: 0.68;
-  }
-}
-
-@media (max-width: 640px) {
-  .bg-grid::before {
-    inset: -10%;
-    background:
-      radial-gradient(circle at 50% 16%, rgba(45,184,75,0.42), transparent 34%),
-      radial-gradient(circle at 28% 46%, rgba(45,184,75,0.24), transparent 32%),
-      radial-gradient(circle at 74% 62%, rgba(45,184,75,0.22), transparent 34%);
-    filter: blur(18px);
-    opacity: 0.88;
-  }
 }
