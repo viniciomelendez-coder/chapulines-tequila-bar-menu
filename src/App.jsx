@@ -12,21 +12,21 @@ import {
   bourbonWhiskey,
   vodkaGin,
   happyEndings,
+  findItemById,
 } from "./data/menu.js";
 
-import Home            from "./components/Home.jsx";
-import CategoryPage    from "./components/CategoryPage.jsx";
-import DrinkDetail     from "./components/DrinkDetail.jsx";
-import BeerDetail      from "./components/BeerDetail.jsx";
-import BottleDetail    from "./components/BottleDetail.jsx";
-import HappyEndingDetail from "./components/HappyEndingDetail.jsx";
+import Home               from "./components/Home.jsx";
+import CategoryPage       from "./components/CategoryPage.jsx";
+import DrinkDetail        from "./components/DrinkDetail.jsx";
+import BeerDetail         from "./components/BeerDetail.jsx";
+import BottleDetail       from "./components/BottleDetail.jsx";
+import HappyEndingDetail  from "./components/HappyEndingDetail.jsx";
 
-// Map category id → data array (or object for beers)
 const CATEGORY_DATA = {
   "signature-cocktails": signatureCocktails,
   "margaritas":          margaritas,
   "mezcal-cocktails":    mezcalCocktails,
-  "beers":               beers,          // { draft, bottles }
+  "beers":               beers,
   "lowland-tequilas":    lowlandTequilas,
   "highland-tequilas":   highlandTequilas,
   "mezcal-selection":    mezcalSelection,
@@ -36,47 +36,51 @@ const CATEGORY_DATA = {
   "happy-endings":       happyEndings,
 };
 
-// Which categories show a "bottle" detail page
-const BOTTLE_CATEGORIES = new Set([
-  "lowland-tequilas",
-  "highland-tequilas",
-  "mezcal-selection",
-  "red-wines",
-  "bourbon-whiskey",
-  "vodka-gin",
-]);
-
-// Which categories show a "drink" detail (mixed cocktails)
-const COCKTAIL_CATEGORIES = new Set([
-  "signature-cocktails",
-  "margaritas",
-  "mezcal-cocktails",
-]);
-
 export default function App() {
   const [view, setView]                     = useState("home");
   const [activeCategory, setActiveCategory] = useState(null);
   const [activeItem, setActiveItem]         = useState(null);
   const [detailType, setDetailType]         = useState(null);
-  // detailType: "drink" | "beer" | "bottle" | "happy"
+  const [detailCatId, setDetailCatId]       = useState(null);
+  // navigation stack for back button after spirit link
+  const [prevState, setPrevState]           = useState(null);
 
   function openCategory(id) {
     setActiveCategory(id);
     setView("category");
+    setPrevState(null);
   }
 
-  function openItem(item, catId) {
+  function _setDetail(item, catId, type) {
     setActiveItem(item);
+    setDetailCatId(catId);
     if (catId === "beers") {
       setDetailType("beer");
-    } else if (BOTTLE_CATEGORIES.has(catId)) {
-      setDetailType("bottle");
     } else if (catId === "happy-endings") {
       setDetailType("happy");
+    } else if (
+      ["lowland-tequilas","highland-tequilas","mezcal-selection",
+       "red-wines","bourbon-whiskey","vodka-gin"].includes(catId)
+    ) {
+      setDetailType("bottle");
     } else {
       setDetailType("drink");
     }
     setView("detail");
+  }
+
+  function openItem(item, catId) {
+    setPrevState(null);
+    _setDetail(item, catId, null);
+  }
+
+  // Spirit link navigation — saves current state so we can go back
+  function openItemById(id) {
+    const found = findItemById(id);
+    if (!found) return;
+    // Save current state for back
+    setPrevState({ item: activeItem, catId: detailCatId, type: detailType, view });
+    _setDetail(found.item, found.categoryId, found.type);
   }
 
   function goHome() {
@@ -84,12 +88,24 @@ export default function App() {
     setActiveCategory(null);
     setActiveItem(null);
     setDetailType(null);
+    setDetailCatId(null);
+    setPrevState(null);
   }
 
   function goBack() {
-    setActiveItem(null);
-    setDetailType(null);
-    setView("category");
+    if (prevState) {
+      // Return to the cocktail we came from
+      setActiveItem(prevState.item);
+      setDetailCatId(prevState.catId);
+      setDetailType(prevState.type);
+      setView("detail");
+      setPrevState(null);
+    } else {
+      setActiveItem(null);
+      setDetailType(null);
+      setDetailCatId(null);
+      setView("category");
+    }
   }
 
   return (
@@ -97,7 +113,6 @@ export default function App() {
       {view === "home" && (
         <Home categories={categories} onSelect={openCategory} />
       )}
-
       {view === "category" && (
         <CategoryPage
           categoryId={activeCategory}
@@ -107,18 +122,17 @@ export default function App() {
           onItemClick={(item) => openItem(item, activeCategory)}
         />
       )}
-
       {view === "detail" && activeItem && detailType === "drink" && (
-        <DrinkDetail drink={activeItem} onBack={goBack} />
+        <DrinkDetail drink={activeItem} onBack={goBack} onSpiritLink={openItemById} />
       )}
       {view === "detail" && activeItem && detailType === "beer" && (
         <BeerDetail beer={activeItem} onBack={goBack} />
       )}
       {view === "detail" && activeItem && detailType === "bottle" && (
-        <BottleDetail item={activeItem} categoryId={activeCategory} onBack={goBack} />
+        <BottleDetail item={activeItem} categoryId={detailCatId} onBack={goBack} />
       )}
       {view === "detail" && activeItem && detailType === "happy" && (
-        <HappyEndingDetail item={activeItem} onBack={goBack} />
+        <HappyEndingDetail item={activeItem} onBack={goBack} onSpiritLink={openItemById} />
       )}
     </div>
   );

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { findItemById } from "../data/menu.js";
 
 function Section({ label, children }) {
   return (
@@ -12,7 +13,38 @@ function Section({ label, children }) {
   );
 }
 
-export default function HappyEndingDetail({ item, onBack }) {
+function SpiritCard({ item, onSpiritLink }) {
+  const linked = item.spiritLinkId ? findItemById(item.spiritLinkId) : null;
+  const clickable = !!linked;
+  if (!item.spirit && !linked) return null;
+
+  return (
+    <div
+      onClick={clickable && onSpiritLink ? () => onSpiritLink(item.spiritLinkId) : undefined}
+      className={`bg-carbon-700 border rounded-lg px-4 py-3 space-y-1 transition-all
+        ${clickable
+          ? "border-agave/25 cursor-pointer hover:border-agave/50 hover:shadow-glow-sm active:scale-97"
+          : "border-white/5 cursor-default"
+        }`}
+    >
+      <div className="flex items-start justify-between gap-3">
+        <div className="flex-1 min-w-0">
+          {item.spirit?.name && <p className="font-body font-bold text-cream text-sm">{item.spirit.name}</p>}
+          {item.spirit?.type && <p className="text-[11px] text-gold/55 font-body">{item.spirit.type}</p>}
+          {item.spirit?.notes && <p className="text-xs text-cream/45 font-display italic mt-2 leading-relaxed">{item.spirit.notes}</p>}
+        </div>
+        {clickable && <span className="text-agave/60 text-base mt-1 shrink-0">›</span>}
+      </div>
+      {clickable && (
+        <p className="text-[9px] text-agave/50 font-body tracking-widest uppercase pt-1 border-t border-white/5 mt-2">
+          Tap to learn more
+        </p>
+      )}
+    </div>
+  );
+}
+
+export default function HappyEndingDetail({ item, onBack, onSpiritLink }) {
   const [imgFailed, setImgFailed] = useState(false);
 
   return (
@@ -75,6 +107,13 @@ export default function HappyEndingDetail({ item, onBack }) {
             ))}
           </div>
         </Section>
+
+        {/* Spirit linking for happy endings if applicable */}
+        {(item.spirit || item.spiritLinkId) && (
+          <Section label="The Spirit">
+            <SpiritCard item={item} onSpiritLink={onSpiritLink} />
+          </Section>
+        )}
 
         <Section label="Preparation">
           <p className="text-sm text-cream/45 font-body leading-relaxed">{item.preparation}</p>

@@ -5,9 +5,9 @@ function CategoryIcon({ src, label }) {
   const [failed, setFailed] = useState(false);
   if (failed) {
     return (
-      <div className="w-8 h-8 rounded-full border border-agave/30 flex items-center justify-center mb-3 shrink-0">
+      <div className="w-8 h-8 rounded-full border border-agave/28 flex items-center justify-center mb-3 shrink-0">
         <span className="text-agave text-[10px] font-bold tracking-wider uppercase">
-          {label.slice(0, 2)}
+          {label.replace(/-/g, " ").split(" ").map(w => w[0]).join("").slice(0, 2)}
         </span>
       </div>
     );
@@ -59,7 +59,7 @@ export default function Home({ categories, onSelect }) {
           <p className="font-display italic text-cream/30 text-xs tracking-wider">— Drink Menu —</p>
         </div>
 
-        {/* CATEGORY GRID — 2 columns */}
+        {/* CATEGORY GRID */}
         <div className="grid grid-cols-2 gap-3 w-full max-w-sm relative z-10">
           {categories.map((cat) => (
             <button
@@ -71,9 +71,8 @@ export default function Home({ categories, onSelect }) {
                          active:scale-97 transition-all duration-150
                          focus:outline-none focus:ring-1 focus:ring-agave/40"
             >
-              {/* Corner glow */}
               <div className="absolute top-0 right-0 w-14 h-14 -translate-y-7 translate-x-7 rounded-full"
-                   style={{ background: "radial-gradient(circle, rgba(45,184,75,0.1) 0%, transparent 70%)" }} />
+                   style={{ background: "radial-gradient(circle, rgba(45,184,75,0.09) 0%, transparent 70%)" }} />
 
               <CategoryIcon src={cat.icon} label={cat.id} />
 

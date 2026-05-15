@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { findItemById } from "../data/menu.js";
 
 const TAG_STYLE = {
   "House Favorite": "bg-agave/15 text-agave border-agave/30",
@@ -46,7 +47,48 @@ function Section({ label, children }) {
   );
 }
 
-export default function DrinkDetail({ drink, onBack }) {
+// Spirit card — clickable when spiritLinkId resolves to a real item
+function SpiritCard({ drink, onSpiritLink }) {
+  const { spirit, spiritLinkId } = drink;
+  const linked = spiritLinkId ? findItemById(spiritLinkId) : null;
+  const clickable = !!linked;
+
+  function handleClick() {
+    if (clickable && onSpiritLink) onSpiritLink(spiritLinkId);
+  }
+
+  return (
+    <div
+      onClick={clickable ? handleClick : undefined}
+      className={`bg-carbon-700 border rounded-lg px-4 py-3 space-y-1 transition-all
+        ${clickable
+          ? "border-agave/25 cursor-pointer hover:border-agave/50 hover:shadow-glow-sm active:scale-97"
+          : "border-white/5 cursor-default"
+        }`}
+    >
+      <div className="flex items-start justify-between gap-3">
+        <div className="flex-1 min-w-0 space-y-1">
+          <p className="font-body font-bold text-cream text-sm">{spirit?.name}</p>
+          <p className="text-[11px] text-gold/55 font-body">{spirit?.type}</p>
+          <p className="text-[11px] text-cream/28 font-body">{spirit?.origin}</p>
+          <p className="text-xs text-cream/45 font-display italic mt-2 leading-relaxed">{spirit?.notes}</p>
+        </div>
+        {clickable && (
+          <div className="shrink-0 flex flex-col items-center gap-1 mt-1">
+            <span className="text-agave/60 text-base">›</span>
+          </div>
+        )}
+      </div>
+      {clickable && (
+        <p className="text-[9px] text-agave/50 font-body tracking-widest uppercase pt-1 border-t border-white/5 mt-2">
+          Tap to learn more
+        </p>
+      )}
+    </div>
+  );
+}
+
+export default function DrinkDetail({ drink, onBack, onSpiritLink }) {
   const [imgFailed, setImgFailed] = useState(false);
 
   return (
@@ -109,13 +151,9 @@ export default function DrinkDetail({ drink, onBack }) {
           </div>
         </Section>
 
+        {/* SPIRIT CARD — clickable if spiritLinkId matches a real item */}
         <Section label="The Spirit">
-          <div className="bg-carbon-700 border border-white/5 rounded-lg px-4 py-3 space-y-1">
-            <p className="font-body font-bold text-cream text-sm">{drink.spirit?.name}</p>
-            <p className="text-[11px] text-gold/55 font-body">{drink.spirit?.type}</p>
-            <p className="text-[11px] text-cream/28 font-body">{drink.spirit?.origin}</p>
-            <p className="text-xs text-cream/45 font-display italic mt-2 leading-relaxed">{drink.spirit?.notes}</p>
-          </div>
+          <SpiritCard drink={drink} onSpiritLink={onSpiritLink} />
         </Section>
 
         <Section label="Preparation">
@@ -148,10 +186,9 @@ export default function DrinkDetail({ drink, onBack }) {
           </Section>
         )}
 
-        {/* HOUSE TOUCH */}
         {drink.houseTouch && (
           <div className="bg-agave/5 border border-agave/15 rounded-lg px-4 py-3">
-            <p className="text-[10px] text-agave font-bold tracking-widest uppercase mb-1.5 font-body">
+            <p className="text-[9px] text-agave font-bold tracking-widest uppercase mb-1.5 font-body">
               Chapulines House Touch
             </p>
             <p className="text-xs text-cream/45 font-display italic leading-relaxed">
