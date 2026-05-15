@@ -16,10 +16,20 @@
   .scrollbar-none { -ms-overflow-style: none; scrollbar-width: none; }
   .scrollbar-none::-webkit-scrollbar { display: none; }
   .bg-grid {
-    background-image:
-      linear-gradient(rgba(255,255,255,0.022) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255,255,255,0.022) 1px, transparent 1px);
-    background-size: 32px 32px;
+  background-image:
+    linear-gradient(rgba(45,184,75,0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(45,184,75,0.035) 1px, transparent 1px);
+  background-size: 32px 32px;
+  animation: grid-drift 22s linear infinite;
+}
+
+@keyframes grid-drift {
+  0% {
+    background-position: 0 0;
   }
+  100% {
+    background-position: 32px 32px;
+  }
+}
   .active\:scale-97:active { transform: scale(0.97); }
 }
