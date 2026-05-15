@@ -1,63 +1,46 @@
 // ============================================================
-// CHAPULINES TEQUILA BAR — MENU DATA
-// Edita precios, fotos, ingredientes y descripciones aquí.
-// Logo  →  public/assets/logo.png
-// Icons →  public/assets/icons/{id}.png
-// Fotos →  public/assets/drinks/{id}.jpg
+// CHAPULINES TEQUILA BAR — COMPLETE MENU DATA v3
+// ============================================================
+// Logo         →  public/assets/logo.png
+// Icons        →  public/assets/icons/{id}.png
+// Drink photos →  public/assets/drinks/{id}.jpg
+// Bottle photos→  public/assets/bottles/{id}.jpg
 // ============================================================
 
 export const categories = [
-  {
-    id: "tragos",
-    label: "Los Tragos",
-    subtitle: "para brindar bonito",
-    icon: "/assets/icons/tragos.png",       // reemplaza con tu ícono
-  },
-  {
-    id: "margaritas",
-    label: "Margaritas",
-    subtitle: "clásicas & especiales",
-    icon: "/assets/icons/margaritas.png",
-  },
-  {
-    id: "mezcal",
-    label: "Mezcal Drinks",
-    subtitle: "artesanal & con alma",
-    icon: "/assets/icons/mezcal.png",
-  },
-  {
-    id: "cervezas",
-    label: "Cervezas",
-    subtitle: "una chela bien fría",
-    icon: "/assets/icons/cervezas.png",
-  },
+  { id: "signature-cocktails", label: "Signature Cocktails", subtitle: "Crafted for good times",          icon: "/assets/icons/signature-cocktails.png" },
+  { id: "margaritas",          label: "Margaritas",          subtitle: "Classic & specialty",              icon: "/assets/icons/margaritas.png" },
+  { id: "mezcal-cocktails",    label: "Mezcal Cocktails",    subtitle: "Smoky, bright & bold",             icon: "/assets/icons/mezcal-cocktails.png" },
+  { id: "beers",               label: "Beers",               subtitle: "Ice-cold drafts & bottles",        icon: "/assets/icons/beers.png" },
+  { id: "lowland-tequilas",    label: "Lowland Tequilas",    subtitle: "Earthy, herbal & traditional",     icon: "/assets/icons/lowland-tequilas.png" },
+  { id: "highland-tequilas",   label: "Highland Tequilas",   subtitle: "Bright, floral & expressive",      icon: "/assets/icons/highland-tequilas.png" },
+  { id: "mezcal-selection",    label: "Mezcal Selection",    subtitle: "Artisanal pours from Mexico",      icon: "/assets/icons/mezcal-selection.png" },
+  { id: "red-wines",           label: "Red Wines",           subtitle: "Smooth reds by the glass",         icon: "/assets/icons/red-wines.png" },
+  { id: "bourbon-whiskey",     label: "Bourbon & Whiskey",   subtitle: "Classic pours & bold finishes",    icon: "/assets/icons/bourbon-whiskey.png" },
+  { id: "vodka-gin",           label: "Vodka & Gin",         subtitle: "Clean, crisp & aromatic",          icon: "/assets/icons/vodka-gin.png" },
+  { id: "happy-endings",       label: "Happy Endings",       subtitle: "After-dinner drinks & sweet finales", icon: "/assets/icons/happy-endings.png" },
 ];
 
-// ── TAGS disponibles ──────────────────────────────────────
-// Fresh | Spicy | Classic | Premium | House Favorite |
-// Tropical | Smoky | Floral | Bold | Light | Frozen
-
-export const tragos = [
+// ─────────────────────────────────────────────────────────────
+// SIGNATURE COCKTAILS
+// ─────────────────────────────────────────────────────────────
+export const signatureCocktails = [
   {
     id: "zenzonte-paloma",
     name: "Zenzonte Paloma",
     price: 9,
     image: "/assets/drinks/zenzonte-paloma.jpg",
     tags: ["Fresh", "Classic", "House Favorite"],
-    ingredients: ["Zenzonte Blanco Tequila", "Jugo de limón fresco", "Soda de toronja", "Sal"],
-    spirit: {
-      name: "Zenzonte Blanco",
-      type: "Tequila Blanco 100% Agave Azul",
-      origin: "Jalisco, México",
-      notes: "Cítrico, floral, limpio y con un final suave.",
-    },
-    description: "La versión mexicana del Paloma clásico — refrescante, ligera y perfecta para el calor.",
-    preparation: "Se construye en vaso con hielo. Tequila + limón fresco, soda de toronja lentamente para conservar el gas y una pizca de sal en el borde.",
-    history: "La Paloma es uno de los cócteles más populares de México, posiblemente más consumida en el país que la margarita misma.",
-    funFact: "En muchas cantinas del norte de México se prepara con Squirt en lugar de soda de toronja artesanal.",
-    pairing: "Tacos de camarón, ceviche, ensaladas frescas.",
+    ingredients: ["Zenzonte Blanco Tequila", "Fresh lime juice", "Grapefruit soda", "Salt"],
+    spirit: { name: "Zenzonte Blanco", type: "100% Blue Agave Blanco Tequila", origin: "Jalisco, Mexico", notes: "Citrusy, floral and clean with a soft smooth finish." },
+    description: "The Mexican take on the classic Paloma — refreshing, light and perfect for the heat.",
+    preparation: "Built directly over ice. Tequila and fresh lime first, grapefruit soda added slowly to preserve carbonation, finished with a pinch of salt.",
+    story: "The Paloma is one of Mexico's most beloved cocktails — some say it's consumed more often in Mexico than the margarita itself.",
+    funFact: "In many cantinas in northern Mexico, the Paloma is made with Squirt soda instead of fresh grapefruit.",
+    pairing: "Shrimp tacos, ceviche, light salads.",
+    houseTouch: "Balanced with our house citrus profile and a clean salted rim.",
     levels: { sweetness: 3, acidity: 4, intensity: 2, spice: 0 },
-    responsibleMessage: "Disfruta con responsabilidad. No manejes después de consumir alcohol.",
+    responsibleMessage: "Please enjoy responsibly. Do not drink and drive.",
   },
   {
     id: "michelada",
@@ -65,20 +48,16 @@ export const tragos = [
     price: 8,
     image: "/assets/drinks/michelada.jpg",
     tags: ["Spicy", "Classic", "House Favorite"],
-    ingredients: ["Cerveza lager", "Santos Miche Mix", "Jugo de limón", "Salsa picante"],
-    spirit: {
-      name: "Cerveza Lager",
-      type: "Cerveza de Malta",
-      origin: "México",
-      notes: "Ligera, carbonatada y de sabor suave, ideal para mezclar con cítricos y chile.",
-    },
-    description: "El cóctel de cerveza más icónico de México. Sabor intenso, picante y profundamente satisfactorio.",
-    preparation: "Vaso chelero escarchado con limón y sal. Miche mix con limón y salsa al gusto. Cerveza fría poco a poco para conservar el gas.",
-    history: "Aunque su origen exacto no está completamente documentado, la michelada forma parte de la cultura popular mexicana desde mediados del siglo XX.",
-    funFact: "El nombre posiblemente viene de 'Mi chela helada' — 'mi cerveza helada' en el argot mexicano.",
-    pairing: "Tacos, mariscos, comida picante en general.",
+    ingredients: ["Lager beer", "Santos Miche Mix", "Fresh lime juice", "Hot salsa"],
+    spirit: { name: "Lager Beer", type: "Malt Beverage", origin: "Mexico", notes: "Light and carbonated — perfect base for citrus and chili." },
+    description: "Mexico's most iconic beer cocktail. Savory, spicy and deeply satisfying.",
+    preparation: "Chilled glass rimmed with lime and salt. Miche mix and lime at the base, salsa to taste, cold beer poured slowly to preserve carbonation.",
+    story: "Though its exact origin is debated, the Michelada has been a staple of Mexican cantina culture since the mid-20th century.",
+    funFact: "The name likely comes from 'Mi chela helada' — Mexican slang for 'my ice-cold beer.'",
+    pairing: "Tacos, seafood, spicy dishes.",
+    houseTouch: "Built for heat lovers — our miche mix is the real deal.",
     levels: { sweetness: 1, acidity: 3, intensity: 3, spice: 4 },
-    responsibleMessage: "Disfruta con responsabilidad. No manejes después de consumir alcohol.",
+    responsibleMessage: "Please enjoy responsibly. Do not drink and drive.",
   },
   {
     id: "cantarito",
@@ -86,20 +65,16 @@ export const tragos = [
     price: 14,
     image: "/assets/drinks/cantarito.jpg",
     tags: ["Classic", "Premium", "Fresh"],
-    ingredients: ["Tapatio Blanco Tequila", "Jugo de limón", "Jugo de naranja", "Soda de toronja"],
-    spirit: {
-      name: "Tapatio Blanco",
-      type: "Tequila Blanco 100% Agave",
-      origin: "La Magdalena, Jalisco, México",
-      notes: "Robusto, herbáceo, con notas de agave cocido. Carácter auténtico y artesanal.",
-    },
-    description: "El trago festivo de las ferias de Jalisco. Servido en barro para una experiencia auténtica.",
-    preparation: "Los jugos cítricos van primero, luego el tequila, se completa con soda de toronja. El barro aporta minerales únicos.",
-    history: "El cantarito nació en las ferias populares de Jalisco donde se servía en pequeñas vasijas de barro.",
-    funFact: "Tapatio es una de las destilerías más respetadas de México, con producción semi-artesanal.",
+    ingredients: ["Tapatio Blanco Tequila", "Fresh lime juice", "Fresh orange juice", "Grapefruit soda"],
+    spirit: { name: "Tapatio Blanco", type: "100% Agave Blanco Tequila", origin: "La Magdalena, Jalisco, Mexico", notes: "Robust and herbaceous with a genuine agave character." },
+    description: "Jalisco's festival staple. Traditionally served in a clay cup for an authentic experience.",
+    preparation: "Citrus juices first, then tequila, topped with grapefruit soda. The clay cup adds mineral notes and keeps the drink colder longer.",
+    story: "The Cantarito was born at the street fairs of Jalisco, where vendors served it in small clay cups called cantaritos.",
+    funFact: "Tapatio is one of Mexico's most respected artisanal tequila brands, using semi-traditional methods.",
     pairing: "Carnitas, pozole, birria.",
+    houseTouch: "Served with a clean citrus build and our bar's fresh-squeeze standard.",
     levels: { sweetness: 3, acidity: 4, intensity: 3, spice: 0 },
-    responsibleMessage: "Disfruta con responsabilidad. No manejes después de consumir alcohol.",
+    responsibleMessage: "Please enjoy responsibly. Do not drink and drive.",
   },
   {
     id: "old-fashion",
@@ -107,20 +82,16 @@ export const tragos = [
     price: 12,
     image: "/assets/drinks/old-fashion.jpg",
     tags: ["Classic", "Premium", "Bold"],
-    ingredients: ["Bourbon americano", "Angostura bitters", "Cáscara de naranja", "Cereza maraschino"],
-    spirit: {
-      name: "Bourbon Americano",
-      type: "Whiskey de Maíz Añejado en Roble",
-      origin: "Kentucky / Tennessee, EE.UU.",
-      notes: "Vainilla, caramelo, especias cálidas. Roble al final. Suave y complejo.",
-    },
-    description: "Uno de los cócteles más antiguos documentados en la historia. Minimalismo puro.",
-    preparation: "Azúcar con bitters muddle en el vaso. Bourbon sobre hielo grande. Se revuelve despacio — nunca se agita. Piel de naranja expresada sobre la copa.",
-    history: "El Old Fashioned es considerado el cóctel original, documentado por primera vez en 1806.",
-    funFact: "La receta tiene más de 200 años y prácticamente no ha cambiado.",
-    pairing: "Carne asada, quesos maduros, chocolates oscuros.",
+    ingredients: ["American Bourbon", "Angostura bitters", "Orange peel", "Maraschino cherry"],
+    spirit: { name: "American Bourbon", type: "Corn Whiskey Aged in New Charred Oak", origin: "Kentucky / Tennessee, USA", notes: "Vanilla, caramel and warm spice. Oak on the finish. Smooth and complex." },
+    description: "One of the oldest documented cocktails in history. Pure minimalism, impeccable flavor.",
+    preparation: "Sugar muddled with bitters and a splash of water. Large ice cube added, bourbon poured on top and stirred slowly — never shaken. Fresh orange peel expressed over the glass.",
+    story: "The Old Fashioned is considered the original cocktail, first documented in 1806. The name came from drinkers who asked bartenders to make it 'the old-fashioned way.'",
+    funFact: "The recipe is over 200 years old and has barely changed since it was created.",
+    pairing: "Grilled meats, aged cheeses, dark chocolate.",
+    houseTouch: "Stirred to order with a proper orange expression and a quality pour.",
     levels: { sweetness: 2, acidity: 1, intensity: 5, spice: 1 },
-    responsibleMessage: "Disfruta con responsabilidad. No manejes después de consumir alcohol.",
+    responsibleMessage: "Please enjoy responsibly. Do not drink and drive.",
   },
   {
     id: "zenzonte-water",
@@ -128,20 +99,16 @@ export const tragos = [
     price: 9,
     image: "/assets/drinks/zenzonte-water.jpg",
     tags: ["Fresh", "Light", "Classic"],
-    ingredients: ["Ocho Blanco Tequila", "Topo Chico", "Jugo de limón", "Sal"],
-    spirit: {
-      name: "Ocho Blanco",
-      type: "Tequila Blanco de Añada Única (Vintage)",
-      origin: "Arandas, Jalisco, México",
-      notes: "Vegetal, cítrico, mineral. Carácter de agave puro.",
-    },
-    description: "Highball minimalista que deja brillar al tequila premium. Elegante y sin complicaciones.",
-    preparation: "Tequila Ocho sobre hielo grande. Topo Chico frío vertido despacio. Limón exprimido al momento. Pizca de sal.",
-    history: "Ocho es pionero en el concepto de tequila 'añada', similar a cómo se etiquetan los vinos finos.",
-    funFact: "Topo Chico tiene más de 120 años de historia y es originaria de Monterrey, México.",
-    pairing: "Sushi, aguachile, ensaladas de mar.",
+    ingredients: ["Ocho Blanco Tequila", "Topo Chico sparkling water", "Fresh lime juice", "Salt"],
+    spirit: { name: "Ocho Blanco", type: "Single-Estate Vintage Blanco Tequila", origin: "Arandas, Jalisco, Mexico", notes: "Vegetal, citrusy and mineral. Each bottle states the harvest year and ranch." },
+    description: "A minimalist highball that lets the premium tequila shine. Elegant and effortless.",
+    preparation: "Ocho over large ice. Cold Topo Chico poured gently to preserve bubbles. Fresh lime squeezed in. Pinch of salt. No sugar, no shortcuts.",
+    story: "Ocho pioneered the concept of 'vintage tequila' — like wine, each expression reflects the terroir of a specific ranch and harvest year.",
+    funFact: "Topo Chico has over 120 years of history and originates from Monterrey, Mexico.",
+    pairing: "Sushi, aguachile, light seafood.",
+    houseTouch: "Simple, clean and built around a tequila worth tasting on its own.",
     levels: { sweetness: 1, acidity: 3, intensity: 2, spice: 0 },
-    responsibleMessage: "Disfruta con responsabilidad. No manejes después de consumir alcohol.",
+    responsibleMessage: "Please enjoy responsibly. Do not drink and drive.",
   },
   {
     id: "vampiro",
@@ -149,20 +116,16 @@ export const tragos = [
     price: 10,
     image: "/assets/drinks/vampiro.jpg",
     tags: ["Spicy", "Bold", "House Favorite"],
-    ingredients: ["Agaveal Blanco Tequila", "Sangrita artesanal", "Jugo de limón", "Pizca de sal", "Tajín rim"],
-    spirit: {
-      name: "Agaveal Blanco",
-      type: "Tequila Blanco 100% Agave Azul",
-      origin: "Jalisco, México",
-      notes: "Herbáceo, mineral, con notas de agave fresco. Limpio y versátil.",
-    },
-    description: "Cítrico, picante, dulce y ahumado — todo al mismo tiempo. Multidimensional.",
-    preparation: "Copa escarchada con Tajín. Tequila, sangrita picante y limón en coctelera con hielo. Servir en copa fría.",
-    history: "La sangrita es la acompañante histórica del tequila en Jalisco. La combinación en un mismo vaso da origen al Vampiro.",
-    funFact: "La sangrita original se hacía con jugo de granada, naranja agria y chile — varía por región y familia.",
-    pairing: "Tacos de barbacoa, enchiladas rojas, mole.",
+    ingredients: ["Agaveal Blanco Tequila", "Artisan Sangrita", "Fresh lime juice", "Pinch of salt", "Tajín rim"],
+    spirit: { name: "Agaveal Blanco", type: "100% Blue Agave Blanco Tequila", origin: "Jalisco, Mexico", notes: "Herbaceous and mineral with fresh agave notes." },
+    description: "Citrusy, spicy, slightly sweet and smoky — all at once. A multidimensional classic.",
+    preparation: "Tajín-rimmed glass. Tequila, artisan sangrita and lime shaken with ice. Poured into a chilled glass.",
+    story: "Sangrita is the traditional companion to tequila in Jalisco. Combining both in one glass gave birth to the Vampiro — a cantina staple with decades of history.",
+    funFact: "The original sangrita was made with pomegranate, sour orange and chile. The recipe varies by region and family.",
+    pairing: "Barbacoa tacos, red enchiladas, mole.",
+    houseTouch: "Our sangrita is made in-house for a true Jalisco bar experience.",
     levels: { sweetness: 2, acidity: 3, intensity: 3, spice: 4 },
-    responsibleMessage: "Disfruta con responsabilidad. No manejes después de consumir alcohol.",
+    responsibleMessage: "Please enjoy responsibly. Do not drink and drive.",
   },
   {
     id: "charro-negro",
@@ -170,20 +133,16 @@ export const tragos = [
     price: 10,
     image: "/assets/drinks/charro-negro.jpg",
     tags: ["Classic", "Bold", "House Favorite"],
-    ingredients: ["El Tequileño Blanco", "Mexican Coke", "Jugo de limón", "Sal"],
-    spirit: {
-      name: "El Tequileño Blanco",
-      type: "Tequila Blanco 100% Agave",
-      origin: "Tequila, Jalisco, México — desde 1959",
-      notes: "Intenso, con notas de agave cocido y un final herbáceo.",
-    },
-    description: "El cóctel favorito de los charros. Tequila intenso con el dulzor único del Coca-Cola mexicana.",
-    preparation: "Hielo en vaso alto, tequila, limón exprimido y el Mexican Coke se vierte lentamente por el costado del vaso.",
-    history: "El Charro Negro es una variante tequilera del Cuba Libre, adaptada con tequila blanco y Coke mexicana.",
-    funFact: "El Coca-Cola embotellado en México usa azúcar de caña — sabor notablemente diferente.",
-    pairing: "Quesadillas, carne asada, tortas.",
+    ingredients: ["El Tequileño Blanco", "Mexican Coke", "Fresh lime juice", "Salt"],
+    spirit: { name: "El Tequileño Blanco", type: "100% Agave Blanco Tequila", origin: "Tequila, Jalisco, Mexico — est. 1959", notes: "Intense cooked agave character with a robust herbaceous finish." },
+    description: "The cowboy's cocktail. Bold tequila meets the unique sweetness of Mexican Coke.",
+    preparation: "Tall glass over ice, tequila in, fresh lime squeezed over the top, Mexican Coke poured slowly down the side of the glass to layer before blending.",
+    story: "The Charro Negro is the tequila version of the Cuba Libre — adapted with blanco tequila and Mexican Coke, evoking the spirit of the classic Mexican horseman.",
+    funFact: "Mexican Coca-Cola uses real cane sugar instead of high-fructose corn syrup — the difference in flavor is noticeable.",
+    pairing: "Quesadillas, grilled meats, tortas.",
+    houseTouch: "Made with Mexican Coke — no substitutes.",
     levels: { sweetness: 3, acidity: 2, intensity: 3, spice: 0 },
-    responsibleMessage: "Disfruta con responsabilidad. No manejes después de consumir alcohol.",
+    responsibleMessage: "Please enjoy responsibly. Do not drink and drive.",
   },
   {
     id: "acapulco-de-noche",
@@ -191,23 +150,22 @@ export const tragos = [
     price: 11,
     image: "/assets/drinks/acapulco-de-noche.jpg",
     tags: ["Tropical", "Bold", "Fresh"],
-    ingredients: ["Agaveal Blanco Tequila", "Ron caribeño", "Jugo de naranja", "Piña fresca", "Sugar rim"],
-    spirit: {
-      name: "Agaveal Blanco",
-      type: "Tequila Blanco 100% Agave Azul",
-      origin: "Jalisco, México",
-      notes: "Herbáceo, mineral, con notas de agave fresco.",
-    },
-    description: "Fusión audaz entre agave mexicano y ron caribeño. Te lleva al malecón de Acapulco.",
-    preparation: "Sugar rim en el borde. Tequila, ron, OJ y piña fresca en coctelera. Shake 15 segundos. Servir con hielo y piña.",
-    history: "Aunque su origen no está completamente documentado, evoca la era dorada del turismo en Acapulco de los 70s y 80s.",
-    funFact: "Acapulco fue el destino más glamoroso de México en los 60s y 70s, frecuentado por Frank Sinatra y John Wayne.",
-    pairing: "Mariscos, ceviche, cocteles de frutas.",
+    ingredients: ["Agaveal Blanco Tequila", "Caribbean rum", "Fresh orange juice", "Fresh pineapple", "Sugar rim"],
+    spirit: { name: "Agaveal Blanco", type: "100% Blue Agave Blanco Tequila", origin: "Jalisco, Mexico", notes: "Herbaceous and mineral with fresh agave notes." },
+    description: "A bold fusion of Mexican agave and Caribbean rum. One sip and you're on the Acapulco waterfront.",
+    preparation: "Sugar-rimmed glass. Tequila, rum, OJ and fresh pineapple shaken hard for 15 seconds. Served over ice with a pineapple garnish.",
+    story: "Acapulco was Mexico's most glamorous tourist destination in the 1960s and 70s, hosting icons like Frank Sinatra and John Wayne. This cocktail captures that golden era.",
+    funFact: "The name means 'Acapulco at Night' — best enjoyed at golden hour or after dark.",
+    pairing: "Seafood, ceviche, tropical fruit.",
+    houseTouch: "Made for the Chapulines bar experience: fresh, lively and easy to enjoy.",
     levels: { sweetness: 4, acidity: 3, intensity: 3, spice: 0 },
-    responsibleMessage: "Disfruta con responsabilidad. No manejes después de consumir alcohol.",
+    responsibleMessage: "Please enjoy responsibly. Do not drink and drive.",
   },
 ];
 
+// ─────────────────────────────────────────────────────────────
+// MARGARITAS
+// ─────────────────────────────────────────────────────────────
 export const margaritas = [
   {
     id: "frozen",
@@ -216,20 +174,16 @@ export const margaritas = [
     image: "/assets/drinks/frozen-margarita.jpg",
     tags: ["Frozen", "Classic", "Fresh"],
     options: ["Lime", "Tamarind"],
-    ingredients: ["Gold Tequila", "Orange Liqueur", "Sweet & Sour mix", "Sal", "Limón o Tamarindo"],
-    spirit: {
-      name: "Gold Tequila",
-      type: "Tequila Joven / Gold",
-      origin: "Jalisco, México",
-      notes: "Suave, con coloración natural de caramel. Accesible y perfecto para mezclar en frozen.",
-    },
-    description: "La margarita más festiva. Textura de nieve, sabor clásico, temperatura perfecta.",
-    preparation: "Todo al blender con hielo: tequila, licor de naranja y sweet & sour. Blend hasta textura nieve. Copa escarchada con sal.",
-    history: "La margarita frozen fue popularizada en 1971 cuando Mariano Martinez adaptó una máquina de Slurpee en Dallas, Texas.",
-    funFact: "La máquina original de Martinez está exhibida en el Smithsonian Institution en Washington D.C.",
-    pairing: "Nachos, guacamole, alitas.",
+    ingredients: ["Gold Tequila", "Orange liqueur", "Sweet & sour mix", "Salt", "Choice of lime or tamarind"],
+    spirit: { name: "Gold Tequila", type: "Joven / Gold Tequila", origin: "Jalisco, Mexico", notes: "Smooth and approachable with natural caramel coloring — perfect for frozen builds." },
+    description: "The most festive margarita. Slushy texture, classic flavor, perfectly ice-cold.",
+    preparation: "Everything blended with plenty of ice: tequila, orange liqueur and sweet & sour mix, blended to a perfect snow consistency. Served in a salted glass.",
+    story: "The frozen margarita was popularized in 1971 when Mariano Martinez in Dallas, Texas adapted a Slurpee machine to make margaritas on demand.",
+    funFact: "Mariano Martinez's original frozen margarita machine is now on display at the Smithsonian Institution in Washington D.C.",
+    pairing: "Nachos, guacamole, chicken wings.",
+    houseTouch: "Blended fresh to order — choose lime for the classic or tamarind for a Mexican twist.",
     levels: { sweetness: 4, acidity: 3, intensity: 2, spice: 0 },
-    responsibleMessage: "Disfruta con responsabilidad. No manejes después de consumir alcohol.",
+    responsibleMessage: "Please enjoy responsibly. Do not drink and drive.",
   },
   {
     id: "skinny",
@@ -237,20 +191,16 @@ export const margaritas = [
     price: 9,
     image: "/assets/drinks/skinny-margarita.jpg",
     tags: ["Fresh", "Light", "Classic"],
-    ingredients: ["Zenzonte Blanco Tequila", "Jugo de limón", "Jugo de limón amarillo", "Orange Liqueur", "Salt rim"],
-    spirit: {
-      name: "Zenzonte Blanco",
-      type: "Tequila Blanco 100% Agave Azul",
-      origin: "Jalisco, México",
-      notes: "Cítrico, floral, limpio. Ideal para versiones skinny con menos calorías.",
-    },
-    description: "Sin azúcar añadida ni mezclas artificiales. Solo tequila premium y cítricos frescos.",
-    preparation: "Coctelera con hielo: tequila, ambos jugos y licor de naranja. Agitar fuerte 12 segundos. Doble colar en copa escarchada con sal.",
-    history: "La Skinny Margarita nació de la tendencia health-conscious de los 2000s, eliminando jarabes y mezclas artificiales.",
-    funFact: "Una margarita clásica puede tener hasta 400 calorías. La versión skinny ronda las 150-180.",
-    pairing: "Ensaladas, sashimi, aguachile ligero.",
+    ingredients: ["Zenzonte Blanco Tequila", "Fresh lime juice", "Fresh lemon juice", "Orange liqueur", "Salt rim"],
+    spirit: { name: "Zenzonte Blanco", type: "100% Blue Agave Blanco Tequila", origin: "Jalisco, Mexico", notes: "Citrusy, floral and clean — ideal for lighter builds." },
+    description: "No added sugar, no artificial mixes. Just premium tequila and fresh citrus.",
+    preparation: "Shaker with ice: tequila, both fresh citrus juices and orange liqueur. Hard shake for 12 seconds. Double-strained into a salted glass.",
+    story: "The Skinny Margarita emerged from the health-conscious movement of the 2000s, cutting syrups and mixes to bring the actual flavors forward.",
+    funFact: "A standard margarita can have up to 400 calories. The skinny version typically lands around 150–180.",
+    pairing: "Light salads, sashimi, ceviche.",
+    houseTouch: "Built with fresh juice every time — no shortcuts, no mixes.",
     levels: { sweetness: 2, acidity: 5, intensity: 2, spice: 0 },
-    responsibleMessage: "Disfruta con responsabilidad. No manejes después de consumir alcohol.",
+    responsibleMessage: "Please enjoy responsibly. Do not drink and drive.",
   },
   {
     id: "black-berrie",
@@ -258,41 +208,33 @@ export const margaritas = [
     price: 9,
     image: "/assets/drinks/black-berrie.jpg",
     tags: ["Fresh", "Floral", "House Favorite"],
-    ingredients: ["El Tequileño Blanco", "Moras frescas (muddled)", "Orange Liqueur", "Jugo de limón", "Agave syrup", "Salt rim"],
-    spirit: {
-      name: "El Tequileño Blanco",
-      type: "Tequila Blanco 100% Agave",
-      origin: "Tequila, Jalisco, México — desde 1959",
-      notes: "Intenso, herbáceo. Contrasta perfectamente con la dulzura natural de las moras.",
-    },
-    description: "Color morado intenso, sabor frutal y sofisticado. Las moras se muelen al momento.",
-    preparation: "Las moras se muelen (muddle) en la coctelera. Se añaden demás ingredientes con hielo. Shake vigoroso. Doble colar para textura suave.",
-    history: "La tendencia de incorporar frutas de temporada frescas a las margaritas clásicas surgió en los 90s con el movimiento de coctelería artesanal.",
-    funFact: "Las moras contienen antioxidantes naturales que dan a esta margarita su color morado sin colorantes artificiales.",
-    pairing: "Quesos frescos, charcutería, chocolate.",
+    ingredients: ["El Tequileño Blanco", "Fresh muddled berries", "Orange liqueur", "Fresh lime juice", "Agave syrup", "Salt rim"],
+    spirit: { name: "El Tequileño Blanco", type: "100% Agave Blanco Tequila", origin: "Tequila, Jalisco, Mexico — est. 1959", notes: "Intense and herbaceous — a beautiful contrast with the natural sweetness of berries." },
+    description: "Deep purple color, fruity and sophisticated. Berries muddled fresh to order.",
+    preparation: "Fresh berries muddled directly in the shaker to release natural juice. Tequila, liqueur, lime and agave added with ice. Hard shake. Double-strained for silky texture.",
+    story: "The trend of incorporating fresh seasonal fruits into classic margaritas emerged in the 1990s with the rise of craft cocktail culture.",
+    funFact: "The rich purple color is 100% natural — no food coloring, just fresh berries.",
+    pairing: "Fresh cheeses, charcuterie, chocolate.",
+    houseTouch: "Always muddled fresh — the color tells you it's the real thing.",
     levels: { sweetness: 4, acidity: 3, intensity: 2, spice: 0 },
-    responsibleMessage: "Disfruta con responsabilidad. No manejes después de consumir alcohol.",
+    responsibleMessage: "Please enjoy responsibly. Do not drink and drive.",
   },
   {
-    id: "spicy",
+    id: "spicy-margarita",
     name: "Spicy",
     price: 9,
     image: "/assets/drinks/spicy-margarita.jpg",
     tags: ["Spicy", "Bold", "House Favorite"],
-    ingredients: ["Tanteo Jalapeño Tequila", "Orange Liqueur", "Jugo de limón fresco", "Agave syrup", "Tajín rim"],
-    spirit: {
-      name: "Tanteo Jalapeño",
-      type: "Tequila 100% Agave Infusionado con Jalapeño",
-      origin: "Jalisco, México",
-      notes: "Picante natural y progresivo. Pionero en tequilas infusionados.",
-    },
-    description: "El picante llega gradual y crece en cada sorbo. Copa escarchada con Tajín.",
-    preparation: "Copa escarchada con Tajín. Tequila jalapeño, licor de naranja, limón fresco y agave en coctelera. Shake fuerte.",
-    history: "El tequila infusionado con jalapeño fue popularizado en EE.UU. durante los 2010s con el auge de las margaritas picantes.",
-    funFact: "Tanteo fue uno de los primeros tequilas en mercadear activamente el concepto de 'infused tequila' a nivel masivo.",
-    pairing: "Mariscos picantes, alitas búfalo, elote con chile.",
+    ingredients: ["Tanteo Jalapeño Tequila", "Orange liqueur", "Fresh lime juice", "Agave syrup", "Tajín rim"],
+    spirit: { name: "Tanteo Jalapeño", type: "100% Agave Tequila Infused with Fresh Jalapeño", origin: "Jalisco, Mexico", notes: "Natural and progressive heat. A pioneer in infused tequilas." },
+    description: "The spice builds with every sip. Tajín-rimmed glass intensifies the heat from the start.",
+    preparation: "Tajín-rimmed glass. Shaker with ice: jalapeño tequila, orange liqueur, fresh lime and agave syrup to balance the heat. Hard shake.",
+    story: "Jalapeño-infused tequila gained popularity in the US during the 2010s as spicy margaritas became a mainstream staple of Mexican-inspired bars.",
+    funFact: "Tanteo was one of the first brands to successfully market 'infused tequila' on a large scale.",
+    pairing: "Spicy seafood, buffalo wings, elote.",
+    houseTouch: "Built with actual jalapeño tequila — not just a chile slice as decoration.",
     levels: { sweetness: 2, acidity: 3, intensity: 3, spice: 5 },
-    responsibleMessage: "Disfruta con responsabilidad. No manejes después de consumir alcohol.",
+    responsibleMessage: "Please enjoy responsibly. Do not drink and drive.",
   },
   {
     id: "sassy-rita",
@@ -300,20 +242,16 @@ export const margaritas = [
     price: 11,
     image: "/assets/drinks/sassy-rita.jpg",
     tags: ["Floral", "Premium", "Fresh"],
-    ingredients: ["Ocho Reposado Tequila", "St-Germain Elderflower", "Jugo de limón", "Agave syrup", "Salt rim"],
-    spirit: {
-      name: "Ocho Reposado",
-      type: "Tequila Reposado de Añada Única",
-      origin: "Arandas, Jalisco, México",
-      notes: "Añejado 8 semanas en barrica de roble. Notas de vainilla y especias suaves.",
-    },
-    description: "La margarita más elegante. Reposado y St-Germain floral — una combinación inesperadamente perfecta.",
-    preparation: "Coctelera con hielo: tequila, St-Germain, limón y agave. Shake fuerte. Copa escarchada con sal.",
-    history: "St-Germain fue lanzado en 2007 y se convirtió en el ingrediente favorito de bartenders creativos para elevar cócteles clásicos.",
-    funFact: "St-Germain se elabora con flores de saúco cosechadas a mano cada primavera en los Alpes franceses.",
-    pairing: "Mariscos frescos, quesos suaves, sushi.",
+    ingredients: ["Ocho Reposado Tequila", "St-Germain Elderflower Liqueur", "Fresh lime juice", "Agave syrup", "Salt rim"],
+    spirit: { name: "Ocho Reposado", type: "Single-Estate Vintage Reposado Tequila", origin: "Arandas, Jalisco, Mexico", notes: "Rested 8 weeks in oak barrels. Soft vanilla and spice notes that complement the floral St-Germain." },
+    description: "Our most elegant margarita. A reposado and elderflower pairing that surprises every first-timer.",
+    preparation: "Shaker with ice: tequila, St-Germain, fresh lime and agave. Hard shake. Salted glass. Floral on the nose, citrusy on the palate, warm oak finish.",
+    story: "St-Germain launched in 2007 and quickly became a favorite of bartenders worldwide for elevating classic cocktails.",
+    funFact: "St-Germain is made from elderflowers harvested by hand each spring in the French Alps — the harvest window lasts only a few weeks.",
+    pairing: "Fresh seafood, soft cheeses, sushi.",
+    houseTouch: "Built with a clean, refreshing profile and our signature agave-forward balance.",
     levels: { sweetness: 3, acidity: 3, intensity: 2, spice: 0 },
-    responsibleMessage: "Disfruta con responsabilidad. No manejes después de consumir alcohol.",
+    responsibleMessage: "Please enjoy responsibly. Do not drink and drive.",
   },
   {
     id: "presidente",
@@ -321,20 +259,16 @@ export const margaritas = [
     price: 12,
     image: "/assets/drinks/presidente-margarita.jpg",
     tags: ["Premium", "Bold", "Classic"],
-    ingredients: ["Degollado Reposado", "Brandy Presidente", "Orange Liqueur", "Jugo de limón", "Agave syrup", "Salt rim"],
-    spirit: {
-      name: "Degollado Reposado + Brandy Presidente",
-      type: "Tequila Reposado + Brandy de Uva",
-      origin: "Jalisco, México",
-      notes: "Doble espirituoso mexicano con profundidad y complejidad.",
-    },
-    description: "La más imponente. Doble base de espirituosos mexicanos. Carácter y presencia en cada sorbo.",
-    preparation: "Se mezcla el reposado con el brandy primero. Se añade limón y agave. Shake fuerte. Copa con sal.",
-    history: "Brandy Presidente es el brandy más vendido de México desde los 70s. Su inclusión crea una versión profunda y compleja.",
-    funFact: "El Brandy Presidente se elabora en la región vinícola de Aguascalientes con uvas locales.",
-    pairing: "Carnes rojas, mole negro, postres de chocolate.",
+    ingredients: ["Degollado Reposado Tequila", "Brandy Presidente", "Orange liqueur", "Fresh lime juice", "Agave syrup", "Salt rim"],
+    spirit: { name: "Degollado Reposado + Brandy Presidente", type: "Reposado Tequila + Grape Brandy", origin: "Jalisco, Mexico", notes: "Double Mexican spirit base with depth and complexity neither spirit achieves alone." },
+    description: "Our most commanding margarita. Double Mexican spirit base — character and presence in every sip.",
+    preparation: "Reposado and brandy combined first. Fresh lime and agave added to harmonize. Hard shake with ice. Salted glass.",
+    story: "Brandy Presidente has been Mexico's best-selling brandy since the 1970s. Adding it to a margarita creates unexpected depth.",
+    funFact: "Brandy Presidente is produced in the wine region of Aguascalientes, Mexico, with locally grown grapes.",
+    pairing: "Red meats, black mole, chocolate desserts.",
+    houseTouch: "A two-spirit build — more complex than it looks and more drinkable than you'd expect.",
     levels: { sweetness: 3, acidity: 2, intensity: 4, spice: 0 },
-    responsibleMessage: "Disfruta con responsabilidad. No manejes después de consumir alcohol.",
+    responsibleMessage: "Please enjoy responsibly. Do not drink and drive.",
   },
   {
     id: "jp-cadillac",
@@ -342,44 +276,39 @@ export const margaritas = [
     price: 15,
     image: "/assets/drinks/jp-cadillac.jpg",
     tags: ["Premium", "Classic", "Bold"],
-    ingredients: ["Alma Jaguar 101 Tequila", "Grand Gala Triple Sec", "Lemon lime juice", "Agave syrup"],
-    spirit: {
-      name: "Alma Jaguar 101",
-      type: "Tequila Extra Premium 101 Proof (50.5% ABV)",
-      origin: "Jalisco, México",
-      notes: "Intenso, complejo, largo en boca. Notas de agave cocido y especias.",
-    },
-    description: "La margarita de los conocedores. Ingredientes de primera línea. Sin escarchas — el sabor habla solo.",
-    preparation: "Solo ingredientes de primera. Shake largo y vigoroso con hielo abundante. Copa grande sin escarcha.",
-    history: "La Cadillac Margarita es el estándar máximo de calidad. Debe su nombre a la idea de que así como el Cadillac es el mejor coche, esta es la mejor margarita.",
-    funFact: "Grand Gala es un triple sec italiano con base de cognac — muy superior al triple sec estándar.",
-    pairing: "Mariscos premium, sashimi de atún, quesos artesanales.",
+    ingredients: ["Alma Jaguar 101 Tequila", "Grand Gala Triple Sec", "Fresh lemon-lime juice", "Agave syrup"],
+    spirit: { name: "Alma Jaguar 101", type: "Extra Premium Tequila — 101 Proof (50.5% ABV)", origin: "Jalisco, Mexico", notes: "Intense, complex and long on the palate. Grand Gala is an imported premium Italian triple sec." },
+    description: "The connoisseur's margarita. Top-shelf ingredients, no rim needed — the flavor speaks for itself.",
+    preparation: "Premium spirits only. Long vigorous shake with plenty of ice for precise dilution. Served in a large glass, no rim.",
+    story: "The Cadillac Margarita is considered the gold standard in margarita-making — named after the idea that just as the Cadillac is the finest car, this is the finest margarita.",
+    funFact: "Grand Gala is an Italian triple sec with a cognac base — significantly more complex than standard triple sec.",
+    pairing: "Premium seafood, tuna sashimi, artisanal cheeses.",
+    houseTouch: "No rim, no fuss — when ingredients are this good, they need no decoration.",
     levels: { sweetness: 2, acidity: 3, intensity: 5, spice: 0 },
-    responsibleMessage: "Disfruta con responsabilidad. No manejes después de consumir alcohol.",
+    responsibleMessage: "Please enjoy responsibly. Do not drink and drive.",
   },
 ];
 
-export const mezcal = [
+// ─────────────────────────────────────────────────────────────
+// MEZCAL COCKTAILS
+// ─────────────────────────────────────────────────────────────
+export const mezcalCocktails = [
   {
     id: "mezcalita",
     name: "Mezcalita",
     price: 8,
     image: "/assets/drinks/mezcalita.jpg",
     tags: ["Smoky", "Fresh", "House Favorite"],
-    ingredients: ["2 oz Mezcal artesanal", "1 oz Purée de frutos rojos", "0.5 oz Jugo de limón", "0.5 oz Agave syrup"],
-    spirit: {
-      name: "Mezcal Artesanal",
-      type: "Mezcal de Agave Espadín",
-      origin: "Oaxaca, México",
-      notes: "Ahumado, con notas de fruta y tierra. Cocción en hornos de tierra.",
-    },
-    description: "El ahumado del mezcal crea un contraste sorprendente y adictivo con los frutos rojos.",
-    preparation: "Coctelera con hielo: mezcal, purée de frutos rojos, limón y agave. Shake fuerte. Copa con sal o Tajín.",
-    history: "El mezcal es el espíritu madre del tequila. Su historia se remonta a más de 400 años en las comunidades indígenas de Oaxaca.",
-    funFact: "El mezcal puede elaborarse con más de 30 variedades de agave. El tequila solo puede usar agave azul Weber.",
-    pairing: "Quesos ahumados, charcutería, mole negro.",
+    ingredients: ["2 oz Artisanal Mezcal", "1 oz Red fruit purée", "0.5 oz Fresh lime", "0.5 oz Agave syrup"],
+    spirit: { name: "Artisanal Mezcal", type: "Espadín Agave Mezcal", origin: "Oaxaca, Mexico", notes: "Smoky with fruit and earth notes. Underground pit-roasted agave gives it its distinctive character." },
+    description: "The mezcal's smokiness creates a surprising and addictive contrast with the sweetness of red berries.",
+    preparation: "Shaker with ice: mezcal, red fruit purée, fresh lime and agave. Vigorous shake to incorporate the purée. Served with Tajín or salt rim.",
+    story: "Mezcal is the parent spirit of tequila. All tequilas are mezcals, but not all mezcals are tequila. Its history in Oaxacan indigenous communities spans over 400 years.",
+    funFact: "Mezcal can be made from over 30 agave varieties. Tequila can only use blue Weber agave.",
+    pairing: "Smoked cheeses, charcuterie, black mole.",
+    houseTouch: "Built with a clean, refreshing profile and our signature agave-forward balance.",
     levels: { sweetness: 3, acidity: 3, intensity: 4, spice: 0 },
-    responsibleMessage: "Disfruta con responsabilidad. No manejes después de consumir alcohol.",
+    responsibleMessage: "Please enjoy responsibly. Do not drink and drive.",
   },
   {
     id: "bad-bunny",
@@ -387,85 +316,265 @@ export const mezcal = [
     price: 10,
     image: "/assets/drinks/bad-bunny.jpg",
     tags: ["Tropical", "Fresh", "House Favorite"],
-    ingredients: ["2 oz 400 Conejos Mezcal Joven", "1 oz Jugo de piña", "0.75 oz Guava syrup", "0.75 oz Jugo de limón", "Tajín rim", "Garnish de hojas de piña"],
-    spirit: {
-      name: "400 Conejos Mezcal Joven",
-      type: "Mezcal Joven 100% Agave Espadín",
-      origin: "Oaxaca, México",
-      notes: "Ahumado suave y accesible con notas frutales. Perfecto para iniciarse en el mezcal.",
-    },
-    description: "El más fotogénico. Hojas de piña como garnish imitando las orejas del artista.",
-    preparation: "Shake fuerte con todos los ingredientes. Copa escarchada con Tajín. Hojas de piña insertadas como garnish.",
-    history: "400 Conejos toma su nombre de los 400 dioses del pulque en la mitología azteca.",
-    funFact: "En la cosmología azteca, 400 era sinónimo de 'innumerable' — una cantidad infinita.",
-    pairing: "Mariscos tropicales, ceviche de mango, tacos al pastor.",
+    ingredients: ["2 oz 400 Conejos Mezcal Joven", "1 oz Fresh pineapple juice", "0.75 oz Guava syrup", "0.75 oz Fresh lime juice", "Tajín rim", "Pineapple leaf garnish"],
+    spirit: { name: "400 Conejos Mezcal Joven", type: "Joven 100% Espadín Agave Mezcal", origin: "Oaxaca, Mexico", notes: "Soft smoke and accessible fruit notes — perfect for those new to mezcal." },
+    description: "Our most photogenic drink. Pineapple leaf garnish imitates the artist's iconic ears.",
+    preparation: "Hard shake all ingredients with ice. Served in a Tajín-rimmed glass. Pineapple leaves inserted as garnish.",
+    story: "400 Conejos takes its name from the 400 gods of pulque in Aztec mythology — guardians of fermentation and festivity.",
+    funFact: "In Aztec cosmology, '400' meant 'innumerable' — a quantity too large to count.",
+    pairing: "Tropical seafood, mango ceviche, pastor tacos.",
+    houseTouch: "Made for the Chapulines bar experience: fresh, lively and easy to enjoy.",
     levels: { sweetness: 4, acidity: 3, intensity: 3, spice: 2 },
-    responsibleMessage: "Disfruta con responsabilidad. No manejes después de consumir alcohol.",
+    responsibleMessage: "Please enjoy responsibly. Do not drink and drive.",
   },
   {
     id: "spicy-mezcalita",
     name: "Spicy Mezcalita",
     price: null,
-    priceNote: "Consultar",
+    priceNote: "Ask your server",
     image: "/assets/drinks/spicy-mezcalita.jpg",
     tags: ["Spicy", "Smoky", "Bold"],
-    ingredients: ["2 oz Mezcal", "2 oz Jugo de toronja", "0.5 oz Jugo de limón", "0.5 oz Agave syrup", "Splash agua mineral", "Jalapeño fresco", "Chili salt rim", "Toronja garnish"],
-    spirit: {
-      name: "Mezcal Artesanal",
-      type: "Mezcal de Agave Espadín",
-      origin: "Oaxaca, México",
-      notes: "Ahumado intenso que potencia el picante del jalapeño.",
-    },
-    description: "Ahumado y picante que se multiplican. Bebe despacio — el calor aparece gradual.",
-    preparation: "Rim con sal de chile. Mezcal, toronja y limón con agave en coctelera. Splash de agua mineral. Jalapeño fresco adentro.",
-    history: "Aunque su origen no está completamente documentado, forma parte de la nueva ola de cócteles artesanales con mezcal y chile mexicano.",
-    funFact: "El mezcal potencia el picante del jalapeño de manera diferente al tequila — el humo crea capas de sabor más complejas.",
-    pairing: "Tacos de carnitas, guacamole picante, tlayudas oaxaqueñas.",
+    ingredients: ["2 oz Mezcal", "2 oz Fresh grapefruit juice", "0.5 oz Fresh lime", "0.5 oz Agave syrup", "Splash sparkling water", "Fresh jalapeño slice", "Chili salt rim", "Grapefruit garnish"],
+    spirit: { name: "Artisanal Mezcal", type: "Espadín Agave Mezcal", origin: "Oaxaca, Mexico", notes: "Intense smokiness that amplifies the heat of fresh jalapeño." },
+    description: "Smoke and spice that multiply each other. Sip slowly — the heat builds with patience.",
+    preparation: "Chili-salted rim first. Mezcal, fresh grapefruit and lime with agave shaken with ice. Splash of sparkling water. Fresh jalapeño slice inside. Grapefruit round as garnish.",
+    story: "This cocktail represents the new wave of mezcal craft drinks — combining the raw character of Oaxacan spirits with the clean heat of Mexican chiles.",
+    funFact: "Mezcal intensifies jalapeño heat differently than tequila — the smoke adds flavor layers that make the spice feel more complex and lasting.",
+    pairing: "Carnitas tacos, spicy guacamole, Oaxacan tlayudas.",
+    houseTouch: "Served with a fresh jalapeño — heat is part of the experience.",
     levels: { sweetness: 1, acidity: 4, intensity: 4, spice: 5 },
-    responsibleMessage: "Disfruta con responsabilidad. No manejes después de consumir alcohol.",
+    responsibleMessage: "Please enjoy responsibly. Do not drink and drive.",
   },
   {
     id: "oaxaca-mule",
     name: "Oaxaca Mule",
     price: null,
-    priceNote: "Consultar",
+    priceNote: "Ask your server",
     image: "/assets/drinks/oaxaca-mule.jpg",
     tags: ["Tropical", "Smoky", "Fresh"],
-    ingredients: ["2 oz Mezcal de Oaxaca", "0.50 oz Agave syrup", "0.75 oz Jugo de limón", "0.75 oz Maracuyá", "Ginger beer premium"],
-    spirit: {
-      name: "Mezcal de Oaxaca",
-      type: "Mezcal Artesanal",
-      origin: "Oaxaca, México",
-      notes: "Estado con mayor diversidad de agaves del mundo. Más de 30 variedades.",
-    },
-    description: "Jengibre picante y humo de mezcal con maracuyá tropical. Inesperadamente perfecto.",
-    preparation: "Mezcal, agave, limón y maracuyá en vaso mule con hielo. Ginger beer frío encima sin revolver — los sabores se estratifican.",
-    history: "El Moscow Mule original fue creado en los 40s. La versión Oaxaca sustituye el vodka por mezcal y añade maracuyá.",
-    funFact: "Oaxaca tiene la mayor biodiversidad de agaves silvestres del mundo — más de 30 variedades crecen ahí naturalmente.",
-    pairing: "Mariscos, ceviche tropical, quesillo oaxaqueño.",
+    ingredients: ["2 oz Oaxacan Mezcal", "0.5 oz Agave syrup", "0.75 oz Fresh lime juice", "0.75 oz Passion fruit", "Premium ginger beer"],
+    spirit: { name: "Oaxacan Mezcal", type: "Artisanal Mezcal", origin: "Oaxaca, Mexico", notes: "Oaxaca is home to the world's greatest diversity of wild agave — over 30 varieties." },
+    description: "Spicy ginger meets smoky mezcal meets tropical passion fruit. Unexpectedly perfect.",
+    preparation: "Mezcal, agave, lime and passion fruit built over ice in a mule-style glass. Premium ginger beer poured on top without stirring — letting the flavors layer naturally.",
+    story: "The Moscow Mule was created in the 1940s. The Oaxaca Mule replaces vodka with mezcal and adds passion fruit, creating a Mexico-meets-tropics crossover.",
+    funFact: "Oaxaca has the greatest biodiversity of wild agave in the world — over 30 species grow there naturally.",
+    pairing: "Tropical seafood, ceviche, Oaxacan quesillo.",
+    houseTouch: "Built with a clean, refreshing profile and our signature agave-forward balance.",
     levels: { sweetness: 3, acidity: 3, intensity: 4, spice: 1 },
-    responsibleMessage: "Disfruta con responsabilidad. No manejes después de consumir alcohol.",
+    responsibleMessage: "Please enjoy responsibly. Do not drink and drive.",
   },
 ];
 
-export const cervezas = {
+// ─────────────────────────────────────────────────────────────
+// BEERS
+// ─────────────────────────────────────────────────────────────
+export const beers = {
   draft: [
-    { id: "yee-haw-lager", name: "Yee Haw Lager", price: 5, image: "/assets/drinks/yee-haw.jpg", tags: ["Light", "Classic"], type: "American Craft Lager", origin: "Johnson City, Tennessee, EE.UU.", abv: "4.5%", description: "Cervecería artesanal del sur de EE.UU. Ligera, crujiente y muy refrescante. Diseñada para tomarse bien fría.", pairing: "Hamburguesas, alitas, nachos.", responsibleMessage: "Disfruta con responsabilidad. No manejes después de consumir alcohol." },
-    { id: "modelo", name: "Modelo", price: 5, image: "/assets/drinks/modelo.jpg", tags: ["Classic", "House Favorite"], type: "Pale Lager / Pilsner", origin: "Ciudad de México, México — est. 1925", abv: "4.4%", description: "La cerveza más vendida en EE.UU. Cuerpo medio, dulzura suave de malta, final limpio. Funciona con absolutamente todo.", pairing: "Street tacos, mariscos, comida mexicana.", responsibleMessage: "Disfruta con responsabilidad. No manejes después de consumir alcohol." },
-    { id: "xx-amber", name: "XX Amber", price: 5, image: "/assets/drinks/xx-amber.jpg", tags: ["Bold", "Classic"], type: "Vienna Lager / Amber", origin: "Monterrey, México — est. 1897", abv: "4.7%", description: "Creada por un cervecero alemán en 1897. Estilo Vienna: malta tostada con notas de caramelo y pan. La más compleja de las lagers mexicanas.", pairing: "Carnes a la parrilla, quesadillas, enchiladas.", responsibleMessage: "Disfruta con responsabilidad. No manejes después de consumir alcohol." },
-    { id: "pacifico", name: "Pacífico", price: 5, image: "/assets/drinks/pacifico.jpg", tags: ["Light", "Fresh"], type: "Pale Lager", origin: "Mazatlán, Sinaloa, México", abv: "4.5%", description: "Nacida en la costa del Pacífico. El faro de Mazatlán aparece en su etiqueta. Ligera y muy carbonatada. Perfecta con mariscos.", pairing: "Mariscos, ceviche, camarones al ajillo.", responsibleMessage: "Disfruta con responsabilidad. No manejes después de consumir alcohol." },
-    { id: "ultra", name: "Ultra", price: 4.5, image: "/assets/drinks/ultra.jpg", tags: ["Light"], type: "Light Lager", origin: "EE.UU. — Anheuser-Busch", abv: "4.2%", description: "Michelob Ultra, la light beer favorita de quienes cuidan calorías. Mínima amargura, cuerpo muy ligero. Solo 95 calorías.", pairing: "Ensaladas, comida ligera, snacks.", responsibleMessage: "Disfruta con responsabilidad. No manejes después de consumir alcohol." },
-    { id: "local-ipa", name: "Local IPA", price: 6, image: "/assets/drinks/local-ipa.jpg", tags: ["Bold", "Fresh"], type: "India Pale Ale", origin: "Producción Local / Craft", abv: "~6%", description: "IPA artesanal local. Abundante lúpulo con aromas florales, cítricos o pinativos. Más cuerpo y carácter que cualquier lager.", pairing: "Burgers, quesos maduros, comida especiada.", responsibleMessage: "Disfruta con responsabilidad. No manejes después de consumir alcohol." },
+    { id: "yee-haw-lager",  name: "Yee Haw Lager", price: 5, image: "/assets/drinks/yee-haw.jpg",    tags: ["Light","Classic"],           type: "American Craft Lager",         origin: "Johnson City, Tennessee, USA",          abv: "4.5%", description: "A well-crafted lager from one of Tennessee's beloved craft breweries. Crisp, highly carbonated and very refreshing.", pairing: "Burgers, wings, nachos.", responsibleMessage: "Please enjoy responsibly. Do not drink and drive." },
+    { id: "modelo",         name: "Modelo",         price: 5, image: "/assets/drinks/modelo.jpg",     tags: ["Classic","House Favorite"],  type: "Pale Lager / Pilsner",         origin: "Mexico City, Mexico — est. 1925",       abv: "4.4%", description: "The best-selling beer in the United States. Medium body, soft malt sweetness and a clean finish. Works with everything.", pairing: "Street tacos, seafood, Mexican food.", responsibleMessage: "Please enjoy responsibly. Do not drink and drive." },
+    { id: "xx-amber",       name: "XX Amber",       price: 5, image: "/assets/drinks/xx-amber.jpg",   tags: ["Bold","Classic"],            type: "Vienna Lager / Amber",         origin: "Monterrey, Mexico — est. 1897",         abv: "4.7%", description: "Created by a German brewer in 1897. Vienna style: toasted malt with caramel and bread notes. The most complex mainstream Mexican lager.", pairing: "Grilled meats, quesadillas, enchiladas.", responsibleMessage: "Please enjoy responsibly. Do not drink and drive." },
+    { id: "pacifico",       name: "Pacífico",       price: 5, image: "/assets/drinks/pacifico.jpg",   tags: ["Light","Fresh"],             type: "Pale Lager",                   origin: "Mazatlán, Sinaloa, Mexico",             abv: "4.5%", description: "Born on the Pacific coast of Mazatlán. The city's famous lighthouse appears on every bottle. Light and very refreshing.", pairing: "Seafood, ceviche, shrimp.", responsibleMessage: "Please enjoy responsibly. Do not drink and drive." },
+    { id: "ultra",          name: "Ultra",          price: 4.5, image: "/assets/drinks/ultra.jpg",    tags: ["Light"],                     type: "Light Lager",                  origin: "USA — Anheuser-Busch",                  abv: "4.2%", description: "Michelob Ultra. Minimal bitterness, very light body and supremely refreshing. Only 95 calories per serving.", pairing: "Light salads, lean proteins, snacks.", responsibleMessage: "Please enjoy responsibly. Do not drink and drive." },
+    { id: "local-ipa",      name: "Local IPA",      price: 6, image: "/assets/drinks/local-ipa.jpg",  tags: ["Bold","Fresh"],              type: "India Pale Ale",               origin: "Local Craft Brewery",                   abv: "~6%", description: "A locally crafted IPA with generous hopping and aromas ranging from floral and citrusy to piney and resinous. More body and character than any lager.", pairing: "Burgers, aged cheeses, spiced food.", responsibleMessage: "Please enjoy responsibly. Do not drink and drive." },
   ],
   bottles: [
-    { id: "corona-extra", name: "Corona Extra", price: 5, image: "/assets/drinks/corona.jpg", tags: ["Light", "Classic"], type: "Pale Lager", origin: "Ciudad de México, México — est. 1925", abv: "4.5%", description: "La cerveza más exportada del mundo. Pale lager ligera y cristalina. Clásicamente servida con limón.", pairing: "Mariscos, comida mexicana, limón y sal.", responsibleMessage: "Disfruta con responsabilidad. No manejes después de consumir alcohol." },
-    { id: "negra-modelo", name: "Negra Modelo", price: 5, image: "/assets/drinks/negra-modelo.jpg", tags: ["Bold", "Classic"], type: "Munich Dunkel / Vienna Dark Lager", origin: "Ciudad de México, México — est. 1926", abv: "5.4%", description: "'La crema de las cervezas'. Oscura, suave y cremosa con notas de caramelo y malta tostada.", pairing: "Carnes rojas, quesos añejos, mole.", responsibleMessage: "Disfruta con responsabilidad. No manejes después de consumir alcohol." },
-    { id: "local-brew-porter", name: "Local Brew Porter", price: null, priceNote: "Consultar", image: "/assets/drinks/local-porter.jpg", tags: ["Bold"], type: "Porter", origin: "Producción Local / Artesanal", abv: "~5.5%", description: "Porter artesanal local. Notas de chocolate amargo, café y caramelo oscuro. Cuerpo medio-alto.", pairing: "Carnes estofadas, quesos azules, postres de chocolate.", responsibleMessage: "Disfruta con responsabilidad. No manejes después de consumir alcohol." },
-    { id: "local-brew-lager", name: "Local Brew Lager", price: null, priceNote: "Consultar", image: "/assets/drinks/local-lager.jpg", tags: ["Light", "Fresh"], type: "Craft Lager", origin: "Producción Local / Artesanal", abv: "~4.8%", description: "Lager artesanal local. Más carácter que las industriales, manteniendo la accesibilidad. Disponibilidad limitada.", pairing: "Ensaladas, mariscos frescos, comida ligera.", responsibleMessage: "Disfruta con responsabilidad. No manejes después de consumir alcohol." },
-    { id: "victoria-32", name: "Victoria 32oz", price: 10, image: "/assets/drinks/victoria.jpg", tags: ["Classic", "House Favorite"], type: "Vienna Lager", origin: "Toluca, Estado de México — est. 1865", abv: "4.0%", description: "La cerveza más antigua de México desde 1865. Ligeramente dulce, color ámbar pálido. Perfecto para compartir.", pairing: "Botanas mexicanas, antojitos, comida casera.", responsibleMessage: "Disfruta con responsabilidad. No manejes después de consumir alcohol." },
-    { id: "tecate", name: "Tecate", price: 5, image: "/assets/drinks/tecate.jpg", tags: ["Classic"], type: "American Lager", origin: "Tecate, Baja California, México — est. 1944", abv: "4.5%", description: "Nació en la ciudad fronteriza de Tecate, BC. Mediano cuerpo, sabor más pronunciado que Corona. El anillo rojo la hace inconfundible.", pairing: "Carne asada, frijoles, botanas norteñas.", responsibleMessage: "Disfruta con responsabilidad. No manejes después de consumir alcohol." },
-    { id: "bohemia", name: "Bohemia", price: 5, image: "/assets/drinks/bohemia.jpg", tags: ["Premium", "Bold"], type: "Czech-style Pilsner", origin: "Monterrey, México — est. 1905", abv: "5.2%", description: "La cerveza premium más antigua de México. Elaborada con lúpulo Saaz de República Checa. Más amarga, aromática y compleja.", pairing: "Mariscos premium, quesos artesanales, sushi.", responsibleMessage: "Disfruta con responsabilidad. No manejes después de consumir alcohol." },
-    { id: "bud-light", name: "Bud Light", price: 3.5, image: "/assets/drinks/bud-light.jpg", tags: ["Light"], type: "Light Lager", origin: "St. Louis, Missouri, EE.UU.", abv: "4.2%", description: "La light beer más popular de América. Sabor muy neutro, baja amargura. Solo 110 calorías.", pairing: "Snacks, comida ligera, botanas.", responsibleMessage: "Disfruta con responsabilidad. No manejes después de consumir alcohol." },
-    { id: "miller-lite", name: "Miller Lite", price: 3.5, image: "/assets/drinks/miller-lite.jpg", tags: ["Light"], type: "Light Pilsner", origin: "Milwaukee, Wisconsin, EE.UU. — est. 1975", abv: "4.2%", description: "La primera light beer americana exitosa. Un poco más de carácter que Bud Light. Solo 96 calorías.", pairing: "Snacks, comida ligera, botanas.", responsibleMessage: "Disfruta con responsabilidad. No manejes después de consumir alcohol." },
+    { id: "corona-extra",       name: "Corona Extra",       price: 5,   image: "/assets/drinks/corona.jpg",        tags: ["Light","Classic"],           type: "Pale Lager",                   origin: "Mexico City, Mexico — est. 1925",       abv: "4.5%", description: "The world's most exported beer. Light, crystal-clear pale lager with low bitterness. Classically served with a lime wedge.", pairing: "Seafood, Mexican food, lime and salt.", responsibleMessage: "Please enjoy responsibly. Do not drink and drive." },
+    { id: "negra-modelo",       name: "Negra Modelo",       price: 5,   image: "/assets/drinks/negra-modelo.jpg",  tags: ["Bold","Classic"],            type: "Munich Dunkel / Vienna Dark",  origin: "Mexico City, Mexico — est. 1926",       abv: "5.4%", description: "Known in Mexico as 'the cream of beers.' Dark, smooth and creamy with notes of caramel and toasted malt.", pairing: "Red meats, aged cheeses, mole.", responsibleMessage: "Please enjoy responsibly. Do not drink and drive." },
+    { id: "local-brew-porter",  name: "Local Brew Porter",  price: null, priceNote: "Ask your server", image: "/assets/drinks/local-porter.jpg", tags: ["Bold"],            type: "Porter",                       origin: "Local Craft Brewery",                   abv: "~5.5%", description: "Locally crafted porter with notes of dark chocolate, espresso and caramel. Medium-high body with a soft, warm finish.", pairing: "Braised meats, blue cheeses, chocolate desserts.", responsibleMessage: "Please enjoy responsibly. Do not drink and drive." },
+    { id: "local-brew-lager",   name: "Local Brew Lager",   price: null, priceNote: "Ask your server", image: "/assets/drinks/local-lager.jpg",  tags: ["Light","Fresh"],  type: "Craft Lager",                  origin: "Local Craft Brewery",                   abv: "~4.8%", description: "A locally crafted lager with more character than mass-produced options while keeping the crisp, refreshing style. Limited availability.", pairing: "Light salads, fresh seafood, light fare.", responsibleMessage: "Please enjoy responsibly. Do not drink and drive." },
+    { id: "victoria-32",        name: "Victoria 32oz",      price: 10,  image: "/assets/drinks/victoria.jpg",      tags: ["Classic","House Favorite"],  type: "Vienna Lager",                 origin: "Toluca, State of Mexico — est. 1865",   abv: "4.0%", description: "Mexico's oldest beer, brewed since 1865. Slightly sweet, pale amber and very smooth. Perfect for sharing.", pairing: "Mexican snacks, street food, casual fare.", responsibleMessage: "Please enjoy responsibly. Do not drink and drive." },
+    { id: "tecate",             name: "Tecate",             price: 5,   image: "/assets/drinks/tecate.jpg",        tags: ["Classic"],                   type: "American Lager",               origin: "Tecate, Baja California, Mexico",       abv: "4.5%", description: "Born in the small border city of Tecate, BC. Medium-bodied with slightly more flavor than Corona. The red ring makes it unmistakable.", pairing: "Grilled meats, beans, northern-style snacks.", responsibleMessage: "Please enjoy responsibly. Do not drink and drive." },
+    { id: "bohemia",            name: "Bohemia",            price: 5,   image: "/assets/drinks/bohemia.jpg",       tags: ["Premium","Bold"],            type: "Czech-style Pilsner",          origin: "Monterrey, Mexico — est. 1905",         abv: "5.2%", description: "Mexico's oldest premium beer. Brewed with authentic Saaz hops from the Czech Republic since 1905. More bitter, aromatic and complex than any mainstream Mexican lager.", pairing: "Premium seafood, artisanal cheeses, sushi.", responsibleMessage: "Please enjoy responsibly. Do not drink and drive." },
+    { id: "bud-light",          name: "Bud Light",          price: 3.5, image: "/assets/drinks/bud-light.jpg",    tags: ["Light"],                     type: "Light Lager",                  origin: "St. Louis, Missouri, USA",              abv: "4.2%", description: "America's best-known light beer. Neutral flavor, low bitterness and very refreshing. Only 110 calories.", pairing: "Snacks, light food, casual bites.", responsibleMessage: "Please enjoy responsibly. Do not drink and drive." },
+    { id: "miller-lite",        name: "Miller Lite",        price: 3.5, image: "/assets/drinks/miller-lite.jpg",  tags: ["Light"],                     type: "Light Pilsner",                origin: "Milwaukee, Wisconsin, USA — est. 1975", abv: "4.2%", description: "America's first successful light beer (1975). Slightly more hop character than Bud Light with the same light body. 96 calories.", pairing: "Snacks, light food, casual bites.", responsibleMessage: "Please enjoy responsibly. Do not drink and drive." },
   ],
 };
+
+// ─────────────────────────────────────────────────────────────
+// LOWLAND TEQUILAS
+// Lowland region (Tequila Valley / Los Valles):
+// Terroir: earthy, vegetal, herbal, cooked agave character
+// ─────────────────────────────────────────────────────────────
+export const lowlandTequilas = [
+  // HERRADURA
+  { id:"herradura-blanco",    name:"Herradura", expression:"Blanco",    price:7,  priceType:"pour", image:"/assets/bottles/herradura-blanco.jpg",    region:"Lowlands", origin:"Amatitán, Jalisco, Mexico", distillery:"Casa Herradura", agave:"100% Blue Weber Agave", abv:"40%", shortDescription:"Clean and fresh with distinct cooked agave character. One of Mexico's most established lowland tequilas.", tastingNotes:"Fresh agave, citrus and a soft floral note. Light pepper on the finish.", story:"Herradura was founded in 1870 in Amatitán, Jalisco and is considered one of Mexico's heritage tequila brands.", funFact:"Herradura was one of the first brands to produce and commercialize Reposado tequila in the 1970s.", recommendedServe:"Neat or on the rocks.", pairing:"Light seafood, ceviche.", houseTouch:"Ask your server for the best way to enjoy this pour.", source:"https://www.herradura.com", needsReview:false },
+  { id:"herradura-reposado",  name:"Herradura", expression:"Reposado",  price:8,  priceType:"pour", image:"/assets/bottles/herradura-reposado.jpg",  region:"Lowlands", origin:"Amatitán, Jalisco, Mexico", distillery:"Casa Herradura", agave:"100% Blue Weber Agave", abv:"40%", shortDescription:"Aged 11 months in American oak — longer than the industry standard for reposado.", tastingNotes:"Vanilla, cooked agave, light oak and a warm spice finish.", story:"Herradura's Reposado is aged longer than most in the category, giving it a richer, more developed character.", funFact:"Herradura ages its Reposado for 11 months — the NOM standard minimum is only 2 months.", recommendedServe:"Neat, on the rocks or in an elevated cocktail.", pairing:"Grilled meats, aged cheeses.", houseTouch:"Ask your server for the best way to enjoy this pour.", source:"https://www.herradura.com", needsReview:false },
+
+  // ALMA DEL JAGUAR
+  { id:"alma-jaguar-blanco",   name:"Alma del Jaguar", expression:"Blanco",   price:10, priceType:"pour", image:"/assets/bottles/alma-jaguar-blanco.jpg",   region:"Lowlands", origin:"Jalisco, Mexico", distillery:"Not publicly disclosed", agave:"100% Blue Weber Agave", abv:"50.5%", shortDescription:"A high-proof blanco bottled at 101 proof with bold, expressive character.", tastingNotes:"Fresh citrus, roasted agave, light pepper and a long clean finish.", story:"Alma del Jaguar is a premium expression built for those who want intensity and character in their pours.", funFact:"Bottled at 101 proof (50.5% ABV) — significantly higher than the typical 80-proof tequila.", recommendedServe:"Neat or in premium cocktails.", pairing:"Bold flavors, grilled meats.", houseTouch:"Ask your server for the best way to enjoy this pour.", source:"", needsReview:true },
+  { id:"alma-jaguar-reposado", name:"Alma del Jaguar", expression:"Reposado", price:12, priceType:"pour", image:"/assets/bottles/alma-jaguar-reposado.jpg", region:"Lowlands", origin:"Jalisco, Mexico", distillery:"Not publicly disclosed", agave:"100% Blue Weber Agave", abv:"40%", shortDescription:"A lowland reposado with oak-forward character and a smooth, refined finish.", tastingNotes:"Vanilla, toasted oak, cooked agave and soft caramel.", story:"Alma del Jaguar's Reposado brings the bold character of the blanco into a rested, more complex expression.", funFact:"The jaguar is one of the most powerful symbols in pre-Columbian Mexican cultures.", recommendedServe:"Neat or on the rocks.", pairing:"Rich dishes, dark mole.", houseTouch:"Ask your server for the best way to enjoy this pour.", source:"", needsReview:true },
+
+  // ARETTE
+  { id:"arette-blanco",   name:"Arette", expression:"Blanco",   price:12, priceType:"pour", image:"/assets/bottles/arette-blanco.jpg",   region:"Lowlands", origin:"Tequila, Jalisco, Mexico", distillery:"Tequileña S.A. de C.V. (NOM 1109)", agave:"100% Blue Weber Agave", abv:"38%", shortDescription:"An artisan lowland blanco with an earthy, vegetal agave profile and surprisingly elegant character.", tastingNotes:"Fresh agave, citrus zest, slight mineral and light floral finish.", story:"Arette was named after a famous racehorse that won gold at the 1948 London Olympics. The brand carries that spirit of excellence.", funFact:"The horse Arete, who inspired the brand's name, was ridden by Mexican Olympic champion Humberto Mariles.", recommendedServe:"Neat to appreciate the agave character.", pairing:"Light appetizers, fresh ceviche.", houseTouch:"Ask your server for the best way to enjoy this pour.", source:"https://www.tequilaarette.com", needsReview:false },
+  { id:"arette-reposado", name:"Arette", expression:"Reposado", price:14, priceType:"pour", image:"/assets/bottles/arette-reposado.jpg", region:"Lowlands", origin:"Tequila, Jalisco, Mexico", distillery:"Tequileña S.A. de C.V. (NOM 1109)", agave:"100% Blue Weber Agave", abv:"38%", shortDescription:"An approachable and smooth lowland reposado with good complexity for the price.", tastingNotes:"Cooked agave, vanilla, light oak and a clean, warm finish.", story:"Arette's Reposado continues the brand's artisan approach into a rested expression that showcases its lowland roots.", funFact:"Arette is considered a favorite among tequila aficionados who prefer traditional lowland character.", recommendedServe:"Neat or in classic cocktails.", pairing:"Grilled chicken, mild cheeses.", houseTouch:"Ask your server for the best way to enjoy this pour.", source:"https://www.tequilaarette.com", needsReview:false },
+
+  // CASCAHUÍN
+  { id:"cascahuin-blanco",   name:"Cascahuín", expression:"Blanco",   price:8, priceType:"pour", image:"/assets/bottles/cascahuin-blanco.jpg",   region:"Lowlands", origin:"El Arenal, Jalisco, Mexico", distillery:"Destilería Cascahuín (NOM 1123)", agave:"100% Blue Weber Agave", abv:"40%", shortDescription:"A family-owned lowland distillery producing traditional, expressive tequilas since 1904.", tastingNotes:"Bold cooked agave, earthy minerality, pepper and a clean crisp finish.", story:"Cascahuín has been family-owned since 1904, preserving traditional lowland production methods across generations.", funFact:"Cascahuín uses tahona (stone wheel) milling for some expressions, an ancient production method.", recommendedServe:"Neat — the agave character is the story.", pairing:"Earthy, savory dishes.", houseTouch:"Ask your server for the best way to enjoy this pour.", source:"https://www.cascahuin.com", needsReview:false },
+  { id:"cascahuin-reposado", name:"Cascahuín", expression:"Reposado", price:9, priceType:"pour", image:"/assets/bottles/cascahuin-reposado.jpg", region:"Lowlands", origin:"El Arenal, Jalisco, Mexico", distillery:"Destilería Cascahuín (NOM 1123)", agave:"100% Blue Weber Agave", abv:"40%", shortDescription:"A traditional lowland reposado with honest character and a balanced finish.", tastingNotes:"Agave, vanilla, mild oak and a smooth warm finish.", story:"Cascahuín's Reposado brings time and oak to the distillery's bold lowland character.", funFact:"El Arenal is in the heart of the Tequila Valley — prime lowland agave country.", recommendedServe:"Neat or on the rocks.", pairing:"Traditional Mexican dishes.", houseTouch:"Ask your server for the best way to enjoy this pour.", source:"https://www.cascahuin.com", needsReview:false },
+
+  // FORTALEZA
+  { id:"fortaleza-blanco",   name:"Fortaleza", expression:"Blanco",   price:11, priceType:"pour", image:"/assets/bottles/fortaleza-blanco.jpg",   region:"Lowlands", origin:"Tequila, Jalisco, Mexico", distillery:"Destilería La Fortaleza (NOM 1493)", agave:"100% Blue Weber Agave", abv:"40%", shortDescription:"One of the most respected traditional tequilas made using tahona milling and open fermentation.", tastingNotes:"Rich cooked agave, citrus, floral notes and a beautiful clean finish.", story:"Fortaleza is produced at one of the oldest distilleries in Jalisco, using a stone tahona, open wooden fermentation tanks and pot stills — the same methods used over 100 years ago.", funFact:"Fortaleza's founder, Guillermo Erickson Sauza, is a direct descendant of Don Cenobio Sauza — the man credited with identifying blue agave as the best plant for tequila.", recommendedServe:"Neat — this is a sipping tequila.", pairing:"Light seafood, mild cheese.", houseTouch:"Ask your server for the best way to enjoy this pour.", source:"https://www.fortalezatequila.com", needsReview:false },
+  { id:"fortaleza-reposado", name:"Fortaleza", expression:"Reposado", price:14, priceType:"pour", image:"/assets/bottles/fortaleza-reposado.jpg", region:"Lowlands", origin:"Tequila, Jalisco, Mexico", distillery:"Destilería La Fortaleza (NOM 1493)", agave:"100% Blue Weber Agave", abv:"40%", shortDescription:"A traditionally produced reposado with outstanding depth and a long, elegant finish.", tastingNotes:"Cooked agave, vanilla, caramel, toasted oak and a warm lingering finish.", story:"Fortaleza's Reposado rests in American white oak, adding complexity while preserving the distillery's signature earthy, rich character.", funFact:"Fortaleza produces tequila in very small batches — production is intentionally limited.", recommendedServe:"Neat or on the rocks.", pairing:"Rich dishes, dark chocolate.", houseTouch:"Ask your server for the best way to enjoy this pour.", source:"https://www.fortalezatequila.com", needsReview:false },
+
+  // EL TEQUILEÑO
+  { id:"tequileno-blanco",   name:"El Tequileño", expression:"Blanco",   price:7, priceType:"pour", image:"/assets/bottles/tequileno-blanco.jpg",   region:"Lowlands", origin:"Tequila, Jalisco, Mexico", distillery:"G. Georgallis S.A. de C.V. (NOM 1,110)", agave:"100% Blue Weber Agave", abv:"38%", shortDescription:"One of the oldest distilleries in the city of Tequila. Bold, traditional and unapologetically lowland.", tastingNotes:"Intense cooked agave, earthy minerality, pepper and a robust herbaceous finish.", story:"El Tequileño has been produced since 1959 at one of the oldest distilleries in the city of Tequila, Jalisco.", funFact:"The brand was a key part of Mexican cantina culture long before the craft tequila boom.", recommendedServe:"On the rocks or in bold cocktails.", pairing:"Strong flavors, tacos de barbacoa.", houseTouch:"Ask your server for the best way to enjoy this pour.", source:"https://eltequileno.com", needsReview:false },
+  { id:"tequileno-reposado", name:"El Tequileño", expression:"Reposado", price:8, priceType:"pour", image:"/assets/bottles/tequileno-reposado.jpg", region:"Lowlands", origin:"Tequila, Jalisco, Mexico", distillery:"G. Georgallis S.A. de C.V. (NOM 1,110)", agave:"100% Blue Weber Agave", abv:"38%", shortDescription:"A robust lowland reposado with a traditional production character and an honest, direct flavor profile.", tastingNotes:"Cooked agave, vanilla, light oak and a long earthy finish.", story:"El Tequileño's Reposado brings the brand's bold cantina character into a rested expression.", funFact:"El Tequileño remains one of the most affordable quality-driven tequilas made in Jalisco.", recommendedServe:"On the rocks.", pairing:"Traditional Mexican food.", houseTouch:"Ask your server for the best way to enjoy this pour.", source:"https://eltequileno.com", needsReview:false },
+
+  // VOLCÁN DE MI TIERRA
+  { id:"volcan-blanco",   name:"Volcán de Mi Tierra", expression:"Blanco",   price:8, priceType:"pour", image:"/assets/bottles/volcan-blanco.jpg",   region:"Lowlands", origin:"Amatitán, Jalisco, Mexico", distillery:"Volcán de Mi Tierra (NOM 1613)", agave:"100% Blue Weber Agave", abv:"40%", shortDescription:"A fresh and citrusy lowland blanco with a distinctive volcanic terroir influence.", tastingNotes:"Fresh citrus, tropical fruit and light cooked agave with a clean finish.", story:"Volcán de Mi Tierra is produced near the Tequila Volcano, whose volcanic soils give the agave a distinct mineral character.", funFact:"The Tequila Volcano (Volcán de Tequila) is an extinct volcano whose ancient eruptions created the unique soils of the region.", recommendedServe:"Neat, in cocktails.", pairing:"Light appetizers, seafood.", houseTouch:"Ask your server for the best way to enjoy this pour.", source:"https://www.volcandemitierratequila.com", needsReview:false },
+  { id:"volcan-reposado", name:"Volcán de Mi Tierra", expression:"Reposado", price:9, priceType:"pour", image:"/assets/bottles/volcan-reposado.jpg", region:"Lowlands", origin:"Amatitán, Jalisco, Mexico", distillery:"Volcán de Mi Tierra (NOM 1613)", agave:"100% Blue Weber Agave", abv:"40%", shortDescription:"A smooth and balanced lowland reposado with volcanic terroir and gentle oak.", tastingNotes:"Vanilla, fresh agave, light caramel and a smooth warm finish.", story:"Volcán de Mi Tierra's Reposado preserves the volcanic character of the blanco within a light oak framework.", funFact:"Volcán de Mi Tierra is a brand under the LVMH luxury group portfolio.", recommendedServe:"Neat or on the rocks.", pairing:"Chicken, mild cheeses.", houseTouch:"Ask your server for the best way to enjoy this pour.", source:"https://www.volcandemitierratequila.com", needsReview:false },
+
+  // CAZCANES
+  { id:"cazcanes-blanco",   name:"Cazcanes", expression:"Blanco",   price:9,  priceType:"pour", image:"/assets/bottles/cazcanes-blanco.jpg",   region:"Lowlands", origin:"Jalisco, Mexico", distillery:"Not publicly disclosed", agave:"100% Blue Weber Agave", abv:"55%", shortDescription:"A high-proof artisan blanco bottled at 110 proof with a remarkable raw agave intensity.", tastingNotes:"Bold roasted agave, citrus peel, fresh herbs and a long powerful finish.", story:"Cazcanes is produced from estate-grown agave with a focus on intense, traditional flavor expression.", funFact:"Cazcanes bottles at cask strength — the alcohol level reflects the true spirit of the distillate.", recommendedServe:"Neat — sip and appreciate.", pairing:"Bold, intense flavors.", houseTouch:"Ask your server for the best way to enjoy this pour.", source:"", needsReview:true },
+  { id:"cazcanes-reposado", name:"Cazcanes", expression:"Reposado", price:14, priceType:"pour", image:"/assets/bottles/cazcanes-reposado.jpg", region:"Lowlands", origin:"Jalisco, Mexico", distillery:"Not publicly disclosed", agave:"100% Blue Weber Agave", abv:"40%", shortDescription:"A rich, intense reposado with the full character of the estate agave and measured oak influence.", tastingNotes:"Roasted agave, vanilla, caramel and a warm complex finish.", story:"Cazcanes' Reposado maintains the bold intensity of the blanco, rounded by carefully selected barrels.", funFact:"The Cazcanes are a pre-Columbian indigenous group from western Mexico.", recommendedServe:"Neat or on the rocks.", pairing:"Red meats, aged cheeses.", houseTouch:"Ask your server for the best way to enjoy this pour.", source:"", needsReview:true },
+
+  // ENTRE MANOS
+  { id:"entre-manos-blanco",   name:"Entre Manos", expression:"Blanco",   price:10, priceType:"pour", image:"/assets/bottles/entre-manos-blanco.jpg",   region:"Lowlands", origin:"Jalisco, Mexico", distillery:"Not publicly disclosed", agave:"100% Blue Weber Agave", abv:"40%", shortDescription:"A small-batch lowland blanco crafted with careful attention to traditional production.", tastingNotes:"Fresh agave, citrus, mild pepper and a clean herbaceous finish.", story:"Entre Manos — 'between hands' in Spanish — reflects the handcrafted, artisan approach to every bottle.", funFact:"Small-batch tequilas like Entre Manos are often produced in limited quantities.", recommendedServe:"Neat or in craft cocktails.", pairing:"Light seafood, fresh vegetables.", houseTouch:"Ask your server for the best way to enjoy this pour.", source:"", needsReview:true },
+  { id:"entre-manos-reposado", name:"Entre Manos", expression:"Reposado", price:12, priceType:"pour", image:"/assets/bottles/entre-manos-reposado.jpg", region:"Lowlands", origin:"Jalisco, Mexico", distillery:"Not publicly disclosed", agave:"100% Blue Weber Agave", abv:"40%", shortDescription:"A well-balanced lowland reposado with gentle complexity and a smooth finish.", tastingNotes:"Cooked agave, vanilla, light spice and a soft oak finish.", story:"Entre Manos' Reposado reflects the same careful, handcrafted approach as the blanco — with time added.", funFact:"The name Entre Manos celebrates the human craftsmanship behind every bottle.", recommendedServe:"Neat or on the rocks.", pairing:"Mild cheeses, grilled dishes.", houseTouch:"Ask your server for the best way to enjoy this pour.", source:"", needsReview:true },
+
+  // DON FULANO
+  { id:"don-fulano-blanco",   name:"Don Fulano", expression:"Blanco",   price:11, priceType:"pour", image:"/assets/bottles/don-fulano-blanco.jpg",   region:"Lowlands", origin:"Tequila, Jalisco, Mexico", distillery:"La Tequileña S.A. de C.V. (NOM 1146)", agave:"100% Blue Weber Agave", abv:"40%", shortDescription:"A refined and elegant lowland blanco with exceptional clarity and agave expression.", tastingNotes:"Fresh citrus, cooked agave, light floral and mineral notes with a crisp finish.", story:"Don Fulano is produced at one of Jalisco's most respected distilleries and is celebrated for its precision and consistency.", funFact:"'Fulano' in Spanish means 'a certain person' — roughly equivalent to 'John Doe' in English.", recommendedServe:"Neat — this one rewards close attention.", pairing:"Oysters, light ceviche, fresh seafood.", houseTouch:"Ask your server for the best way to enjoy this pour.", source:"https://www.donfulanotequila.com", needsReview:false },
+  { id:"don-fulano-reposado", name:"Don Fulano", expression:"Reposado", price:12, priceType:"pour", image:"/assets/bottles/don-fulano-reposado.jpg", region:"Lowlands", origin:"Tequila, Jalisco, Mexico", distillery:"La Tequileña S.A. de C.V. (NOM 1146)", agave:"100% Blue Weber Agave", abv:"40%", shortDescription:"A polished reposado with classic lowland depth and a fine French oak influence.", tastingNotes:"Vanilla, cooked agave, caramel, light spice and a long, refined finish.", story:"Don Fulano's Reposado rests in French Limousin oak, bringing a European influence to a classic lowland tequila.", funFact:"Don Fulano uses both American and French oak barrels, creating different flavor profiles across expressions.", recommendedServe:"Neat or on the rocks.", pairing:"Chicken in sauce, mild cheeses, fine dining.", houseTouch:"Ask your server for the best way to enjoy this pour.", source:"https://www.donfulanotequila.com", needsReview:false },
+
+  // ZENZONTE
+  { id:"zenzonte-blanco-pour",   name:"Zenzonte", expression:"Blanco",   price:8, priceType:"pour", image:"/assets/bottles/zenzonte-blanco.jpg",   region:"Lowlands", origin:"Jalisco, Mexico", distillery:"Not publicly disclosed", agave:"100% Blue Weber Agave", abv:"40%", shortDescription:"A clean and citrusy lowland blanco with a fresh, accessible character.", tastingNotes:"Fresh agave, citrus and a light floral note with a smooth clean finish.", story:"Zenzonte is the tequila we use in several of our signature cocktails — now available as a straight pour.", funFact:"The zenzonte (mockingbird) is a beloved bird in Mexican culture, known for its adaptability and song.", recommendedServe:"Neat, on the rocks or in cocktails.", pairing:"Light seafood, salads.", houseTouch:"Ask your server for the best way to enjoy this pour.", source:"", needsReview:true },
+  { id:"zenzonte-reposado-pour", name:"Zenzonte", expression:"Reposado", price:9, priceType:"pour", image:"/assets/bottles/zenzonte-reposado.jpg", region:"Lowlands", origin:"Jalisco, Mexico", distillery:"Not publicly disclosed", agave:"100% Blue Weber Agave", abv:"40%", shortDescription:"A smooth and balanced reposado with light oak and the fresh agave character of the blanco.", tastingNotes:"Agave, vanilla, light caramel and a soft warm finish.", story:"Zenzonte's Reposado adds gentle barrel aging to the brand's fresh lowland character.", funFact:"Zenzonte appears as a featured tequila in our Zenzonte Paloma and Zenzonte Water cocktails.", recommendedServe:"Neat or on the rocks.", pairing:"Grilled chicken, mild cheeses.", houseTouch:"Ask your server for the best way to enjoy this pour.", source:"", needsReview:true },
+];
+
+// ─────────────────────────────────────────────────────────────
+// HIGHLAND TEQUILAS
+// Highland region (Los Altos de Jalisco):
+// Terroir: bright, floral, citrusy, sweet agave
+// ─────────────────────────────────────────────────────────────
+export const highlandTequilas = [
+  { id:"tapatio-blanco",     name:"Tapatio",      expression:"Blanco",    price:10, priceType:"pour", image:"/assets/bottles/tapatio-blanco.jpg",     region:"Highlands", origin:"La Magdalena, Jalisco, Mexico", distillery:"Casa Herradura / La Alteña (NOM 1139)", agave:"100% Blue Weber Agave", abv:"38%", shortDescription:"A traditional highland blanco known for bold agave character and artisan production.", tastingNotes:"Fresh agave, herbs, citrus and a clean mineral finish.", story:"Tapatio is produced at La Alteña, a small family distillery that uses traditional methods including tahona milling.", funFact:"Tapatio is credited with pioneering the modern reposado category in the 1970s alongside Herradura.", recommendedServe:"Neat or in the Cantarito.", pairing:"Carnitas, birria, pozole.", houseTouch:"Ask your server for the best way to enjoy this pour.", source:"https://www.tapatio.com.mx", needsReview:false },
+  { id:"tapatio-reposado",   name:"Tapatio",      expression:"Reposado",  price:12, priceType:"pour", image:"/assets/bottles/tapatio-reposado.jpg",   region:"Highlands", origin:"La Magdalena, Jalisco, Mexico", distillery:"Casa Herradura / La Alteña (NOM 1139)", agave:"100% Blue Weber Agave", abv:"38%", shortDescription:"A highland reposado with beautifully integrated oak and a signature floral agave character.", tastingNotes:"Agave, vanilla, dried fruit and a warm oak finish.", story:"Tapatio's Reposado is rested in American white oak, adding complexity while preserving the brand's herbal, traditional character.", funFact:"La Alteña was originally built in the 1930s and retains many of its traditional production elements.", recommendedServe:"Neat or on the rocks.", pairing:"Grilled meats, aged cheeses.", houseTouch:"Ask your server for the best way to enjoy this pour.", source:"https://www.tapatio.com.mx", needsReview:false },
+
+  { id:"lalo-blanco",        name:"Lalo",         expression:"Blanco",    price:8,  priceType:"pour", image:"/assets/bottles/lalo-blanco.jpg",        region:"Highlands", origin:"Jalisco, Mexico", distillery:"Not publicly disclosed (NOM 1579)", agave:"100% Blue Weber Agave", abv:"40%", shortDescription:"A pure, single-expression highland blanco created by Eduardo 'Lalo' González — grandson of Don Julio González.", tastingNotes:"Bright citrus, floral agave, pepper and a clean, expressive finish.", story:"Lalo was founded by Eduardo González to create an honest, transparent 100% agave tequila with no additives — just agave, water and time.", funFact:"Lalo's founder is the grandson of Don Julio González — the man behind one of Mexico's most iconic tequila brands.", recommendedServe:"Neat — designed to be enjoyed pure.", pairing:"Oysters, light ceviche, clean flavors.", houseTouch:"Ask your server for the best way to enjoy this pour.", source:"https://www.lalotequila.com", needsReview:false },
+  { id:"lalo-reposado",      name:"Lalo",         expression:"Reposado",  price:9,  priceType:"pour", image:"/assets/bottles/lalo-reposado.jpg",      region:"Highlands", origin:"Jalisco, Mexico", distillery:"Not publicly disclosed (NOM 1579)", agave:"100% Blue Weber Agave", abv:"40%", shortDescription:"Lalo's reposado continues the brand's commitment to transparency and pure agave expression.", tastingNotes:"Agave, citrus, mild vanilla and a smooth clean finish.", story:"Lalo's Reposado builds on the blanco with a brief rest in American oak, adding complexity without losing the bright highland character.", funFact:"Lalo uses no additives, coloring or flavoring — a commitment the brand calls 'agave first.'", recommendedServe:"Neat or on the rocks.", pairing:"Light dishes, fresh flavors.", houseTouch:"Ask your server for the best way to enjoy this pour.", source:"https://www.lalotequila.com", needsReview:false },
+
+  { id:"siete-leguas-blanco",   name:"Siete Leguas", expression:"Blanco",   price:8,  priceType:"pour", image:"/assets/bottles/siete-leguas-blanco.jpg",   region:"Highlands", origin:"Atotonilco el Alto, Jalisco, Mexico", distillery:"Siete Leguas (NOM 1120)", agave:"100% Blue Weber Agave", abv:"38%", shortDescription:"A classic highland blanco with a bright, expressive agave profile and long tradition.", tastingNotes:"Fresh agave, citrus, light floral and a clean crisp finish.", story:"Siete Leguas was founded in 1952 and was the original producer of Patrón Tequila before the partnership ended.", funFact:"Siete Leguas ('Seven Leagues') is named after the legendary horse of Pancho Villa.", recommendedServe:"Neat or in classic cocktails.", pairing:"Seafood, light starters.", houseTouch:"Ask your server for the best way to enjoy this pour.", source:"https://www.tequilasieteleguas.com.mx", needsReview:false },
+  { id:"siete-leguas-reposado", name:"Siete Leguas", expression:"Reposado", price:9,  priceType:"pour", image:"/assets/bottles/siete-leguas-reposado.jpg", region:"Highlands", origin:"Atotonilco el Alto, Jalisco, Mexico", distillery:"Siete Leguas (NOM 1120)", agave:"100% Blue Weber Agave", abv:"38%", shortDescription:"A rounded and elegant highland reposado with balanced oak and bright agave.", tastingNotes:"Agave, vanilla, dried fruit and a smooth, warm finish.", story:"Siete Leguas' Reposado rests in American white oak, adding depth while preserving the brand's clean highland character.", funFact:"Siete Leguas produces tequila using traditional tahona and roller mill methods side by side.", recommendedServe:"Neat or on the rocks.", pairing:"Chicken, mild dishes.", houseTouch:"Ask your server for the best way to enjoy this pour.", source:"https://www.tequilasieteleguas.com.mx", needsReview:false },
+  { id:"siete-leguas-anejo",    name:"Siete Leguas", expression:"Añejo",    price:11, priceType:"pour", image:"/assets/bottles/siete-leguas-anejo.jpg",    region:"Highlands", origin:"Atotonilco el Alto, Jalisco, Mexico", distillery:"Siete Leguas (NOM 1120)", agave:"100% Blue Weber Agave", abv:"38%", shortDescription:"A rich and complex highland añejo with beautiful depth from American oak aging.", tastingNotes:"Vanilla, caramel, toasted oak, dried fruit and a long elegant finish.", story:"Siete Leguas' Añejo rests for over a year in American white oak barrels, creating a sipping tequila of notable refinement.", funFact:"Añejo tequila by law must be aged between 1 and 3 years in barrels no larger than 600 liters.", recommendedServe:"Neat — a sipping tequila.", pairing:"Dark chocolate, aged cheeses, desserts.", houseTouch:"Ask your server for the best way to enjoy this pour.", source:"https://www.tequilasieteleguas.com.mx", needsReview:false },
+
+  { id:"ocho-blanco",        name:"Ocho",         expression:"Blanco",    price:9,  priceType:"pour", image:"/assets/bottles/ocho-blanco.jpg",        region:"Highlands", origin:"Arandas, Jalisco, Mexico", distillery:"Casa Siete Leguas (NOM 1120)", agave:"100% Blue Weber Agave", abv:"40%", shortDescription:"A vintage-dated highland blanco — every bottle states the harvest year and ranch.", tastingNotes:"Bright citrus, floral agave, fresh herbs and a clean mineral finish.", story:"Ocho pioneered the concept of 'single estate vintage tequila,' treating each harvest as unique — like wine.", funFact:"Ocho was co-founded by renowned tequila expert Tomas Estes — one of the most respected figures in the industry.", recommendedServe:"Neat — designed for contemplation.", pairing:"Oysters, light seafood, sushi.", houseTouch:"Ask your server for the best way to enjoy this pour.", source:"https://www.ochotequila.com", needsReview:false },
+  { id:"ocho-reposado",      name:"Ocho",         expression:"Reposado",  price:10, priceType:"pour", image:"/assets/bottles/ocho-reposado.jpg",      region:"Highlands", origin:"Arandas, Jalisco, Mexico", distillery:"Casa Siete Leguas (NOM 1120)", agave:"100% Blue Weber Agave", abv:"40%", shortDescription:"A rested highland tequila that preserves the vintage character of the blanco.", tastingNotes:"Agave, vanilla, light oak and a warm, clean finish.", story:"Ocho's Reposado adds 8 weeks in American oak to each vintage expression, creating a rested tequila that still reflects its specific harvest.", funFact:"Ocho's name refers to the 8-week resting period for its Reposado.", recommendedServe:"Neat or on the rocks.", pairing:"Light meats, mild cheeses.", houseTouch:"Ask your server for the best way to enjoy this pour.", source:"https://www.ochotequila.com", needsReview:false },
+
+  { id:"corralejo-blanco",   name:"Corralejo",    expression:"Blanco",    price:8,  priceType:"pour", image:"/assets/bottles/corralejo-blanco.jpg",   region:"Highlands", origin:"Pénjamo, Guanajuato, Mexico", distillery:"Hacienda Corralejo (NOM 1368)", agave:"100% Blue Weber Agave", abv:"38%", shortDescription:"A historically significant highland blanco from Guanajuato — one of Mexico's oldest distilleries.", tastingNotes:"Fresh agave, citrus, light sweetness and a clean finish.", story:"Hacienda Corralejo was established in 1755 — making it one of the oldest tequila-producing estates in Mexico. Legend holds that Padre Hidalgo, hero of Mexican independence, visited the hacienda.", funFact:"Corralejo is technically from Guanajuato, not Jalisco — one of only a few tequilas produced outside Jalisco.", recommendedServe:"Neat or in cocktails.", pairing:"Light food, fresh flavors.", houseTouch:"Ask your server for the best way to enjoy this pour.", source:"https://www.haciendacorralejo.com", needsReview:false },
+  { id:"corralejo-reposado", name:"Corralejo",    expression:"Reposado",  price:10, priceType:"pour", image:"/assets/bottles/corralejo-reposado.jpg", region:"Highlands", origin:"Pénjamo, Guanajuato, Mexico", distillery:"Hacienda Corralejo (NOM 1368)", agave:"100% Blue Weber Agave", abv:"38%", shortDescription:"A smooth, balanced reposado aged in French, American and Sherry oak for a unique layered character.", tastingNotes:"Agave, vanilla, light fruit and a smooth warm finish.", story:"Corralejo's Reposado is aged in a blend of three different oak types, creating a complex profile unusual for the category.", funFact:"Corralejo is one of few tequilas to use three different oak types simultaneously for aging.", recommendedServe:"Neat or on the rocks.", pairing:"Chicken, mild dishes.", houseTouch:"Ask your server for the best way to enjoy this pour.", source:"https://www.haciendacorralejo.com", needsReview:false },
+
+  { id:"altos-blanco",       name:"Altos",        expression:"Blanco",    price:7,  priceType:"pour", image:"/assets/bottles/altos-blanco.jpg",       region:"Highlands", origin:"Arandas, Jalisco, Mexico", distillery:"Casa Olmeca (NOM 1111)", agave:"100% Blue Weber Agave", abv:"40%", shortDescription:"A citrusy and bright highland blanco designed for cocktail lovers and approachable sipping.", tastingNotes:"Sweet citrus, fresh agave and a light vegetal finish.", story:"Altos was created by award-winning bartenders Henry Besant and Dre Masso in collaboration with master distiller Jesus Hernandez — designed from the bar's perspective.", funFact:"Altos uses traditional tahona stone milling for part of its production process.", recommendedServe:"In cocktails or on the rocks.", pairing:"Light Mexican food, casual fare.", houseTouch:"Ask your server for the best way to enjoy this pour.", source:"https://www.olmecaaltos.com", needsReview:false },
+  { id:"altos-reposado",     name:"Altos",        expression:"Reposado",  price:8,  priceType:"pour", image:"/assets/bottles/altos-reposado.jpg",     region:"Highlands", origin:"Arandas, Jalisco, Mexico", distillery:"Casa Olmeca (NOM 1111)", agave:"100% Blue Weber Agave", abv:"40%", shortDescription:"A smooth, bartender-friendly highland reposado with balanced agave and oak.", tastingNotes:"Agave, vanilla, caramel and a clean, approachable finish.", story:"Altos' Reposado rests in American white oak, adding warmth and sweetness to the bright highland base.", funFact:"Altos is one of the best-selling premium tequilas in the world — popular for its quality-to-value ratio.", recommendedServe:"In cocktails or on the rocks.", pairing:"Tacos, casual Mexican food.", houseTouch:"Ask your server for the best way to enjoy this pour.", source:"https://www.olmecaaltos.com", needsReview:false },
+
+  { id:"clase-azul-blanco",  name:"Clase Azul",   expression:"Blanco",    price:22, priceType:"pour", image:"/assets/bottles/clase-azul-blanco.jpg",  region:"Highlands", origin:"Santa María Canchesda, Oaxaca / Jalisco", distillery:"Ultra Premium Tequila S.A. de C.V.", agave:"100% Blue Weber Agave", abv:"40%", shortDescription:"A premium highland blanco presented in Clase Azul's iconic hand-painted ceramic decanter.", tastingNotes:"Floral agave, tropical fruit, vanilla and a beautifully refined, long finish.", story:"Clase Azul began in 1997 with a mission to create ultra-premium tequila that celebrates Mexican artisanship — from the spirit inside to the hand-painted ceramic bottle outside.", funFact:"Every Clase Azul ceramic bottle is hand-painted by artisans in Santa María Canchesda, Oaxaca.", recommendedServe:"Neat — it deserves full attention.", pairing:"Fine dining, sipping occasions.", houseTouch:"Ask your server for the best way to enjoy this pour.", source:"https://www.claseazul.com", needsReview:false },
+
+  { id:"don-julio-blanco",   name:"Don Julio",    expression:"Blanco",    price:9,  priceType:"pour", image:"/assets/bottles/don-julio-blanco.jpg",   region:"Highlands", origin:"Atotonilco el Alto, Jalisco, Mexico", distillery:"Tequila Don Julio (NOM 1449)", agave:"100% Blue Weber Agave", abv:"38%", shortDescription:"One of Mexico's most iconic premium highland blancos — clean, smooth and consistently excellent.", tastingNotes:"Fresh citrus, white flowers, agave and a crisp, clean finish.", story:"Don Julio González founded his distillery in 1942 at age 17. His goal was simple: make a tequila worthy of special occasions.", funFact:"Don Julio was the first tequila to be served in smaller bottles — before that, tequila was always served in large containers at the table.", recommendedServe:"Neat, on the rocks or in premium cocktails.", pairing:"Seafood, light dishes.", houseTouch:"Ask your server for the best way to enjoy this pour.", source:"https://www.donjulio.com", needsReview:false },
+  { id:"don-julio-reposado", name:"Don Julio",    expression:"Reposado",  price:10, priceType:"pour", image:"/assets/bottles/don-julio-reposado.jpg", region:"Highlands", origin:"Atotonilco el Alto, Jalisco, Mexico", distillery:"Tequila Don Julio (NOM 1449)", agave:"100% Blue Weber Agave", abv:"38%", shortDescription:"A classic highland reposado with vanilla, agave and gentle oak — the standard bearer of the category.", tastingNotes:"Agave, vanilla, caramel and a smooth, warm finish.", story:"Don Julio's Reposado rests in American white oak for 8 months, creating the smooth, approachable character the brand is known for worldwide.", funFact:"Don Julio 1942 was created to celebrate the 60th anniversary of Don Julio González's first distillery.", recommendedServe:"Neat or on the rocks.", pairing:"Mild Mexican dishes.", houseTouch:"Ask your server for the best way to enjoy this pour.", source:"https://www.donjulio.com", needsReview:false },
+  { id:"don-julio-anejo",    name:"Don Julio",    expression:"Añejo",     price:12, priceType:"pour", image:"/assets/bottles/don-julio-anejo.jpg",    region:"Highlands", origin:"Atotonilco el Alto, Jalisco, Mexico", distillery:"Tequila Don Julio (NOM 1449)", agave:"100% Blue Weber Agave", abv:"38%", shortDescription:"A rich and elegant highland añejo with beautiful oak integration and a long, complex finish.", tastingNotes:"Vanilla, dark caramel, dried fruit, chocolate and a long elegant finish.", story:"Don Julio's Añejo spends 18 months in American white oak barrels, developing the rich, complex character that made the brand famous.", funFact:"Don Julio Añejo is often used as a benchmark comparison when evaluating other añejo tequilas.", recommendedServe:"Neat — pure sipping.", pairing:"Dark chocolate, aged cheeses, cigars.", houseTouch:"Ask your server for the best way to enjoy this pour.", source:"https://www.donjulio.com", needsReview:false },
+  { id:"don-julio-1942",     name:"Don Julio 1942", expression:"Añejo",  price:28, priceType:"pour", image:"/assets/bottles/don-julio-1942.jpg",     region:"Highlands", origin:"Atotonilco el Alto, Jalisco, Mexico", distillery:"Tequila Don Julio (NOM 1449)", agave:"100% Blue Weber Agave", abv:"38%", shortDescription:"Mexico's most celebrated luxury tequila. Aged 2.5 years for an extraordinary sipping experience.", tastingNotes:"Rich vanilla, caramel, toffee, dark dried fruit and an exceptionally long, luxurious finish.", story:"Don Julio 1942 was created in 2002 to honor the year Don Julio González founded his first distillery. Aged in small American oak barrels for at least 2.5 years.", funFact:"Don Julio 1942 is one of the most gifted premium spirits in the world — and one of the most requested tequilas at upscale bars globally.", recommendedServe:"Neat. Always neat.", pairing:"The best company. Special occasions.", houseTouch:"Ask your server for the best way to enjoy this pour.", source:"https://www.donjulio.com", needsReview:false },
+
+  { id:"casamigos-blanco",   name:"Casamigos",    expression:"Blanco",    price:10, priceType:"pour", image:"/assets/bottles/casamigos-blanco.jpg",   region:"Highlands", origin:"Jalisco, Mexico", distillery:"Destilería La Cofradia (NOM 1137)", agave:"100% Blue Weber Agave", abv:"40%", shortDescription:"A smooth, approachable highland blanco co-founded by George Clooney — designed for effortless sipping.", tastingNotes:"Light agave, citrus, vanilla and a soft, clean finish.", story:"Casamigos was founded by George Clooney, Rande Gerber and Mike Meldman — originally created for their personal use before becoming a global brand.", funFact:"Diageo acquired Casamigos in 2017 for up to $1 billion — one of the largest deals in spirits history.", recommendedServe:"Neat, on the rocks or in light cocktails.", pairing:"Light appetizers, seafood.", houseTouch:"Ask your server for the best way to enjoy this pour.", source:"https://www.casamigos.com", needsReview:false },
+  { id:"casamigos-reposado", name:"Casamigos",    expression:"Reposado",  price:12, priceType:"pour", image:"/assets/bottles/casamigos-reposado.jpg", region:"Highlands", origin:"Jalisco, Mexico", distillery:"Destilería La Cofradia (NOM 1137)", agave:"100% Blue Weber Agave", abv:"40%", shortDescription:"A smooth and accessible highland reposado rested in American oak for 7 months.", tastingNotes:"Vanilla, caramel, light agave and a smooth, easy finish.", story:"Casamigos' Reposado is aged in American white oak barrels for 7 months — longer than the standard requirement.", funFact:"Casamigos grew from 1,000 cases a year (2012) to over 120,000 cases before its $1 billion acquisition.", recommendedServe:"Neat or on the rocks.", pairing:"Mild Mexican dishes, casual fare.", houseTouch:"Ask your server for the best way to enjoy this pour.", source:"https://www.casamigos.com", needsReview:false },
+  { id:"casamigos-anejo",    name:"Casamigos",    expression:"Añejo",     price:14, priceType:"pour", image:"/assets/bottles/casamigos-anejo.jpg",    region:"Highlands", origin:"Jalisco, Mexico", distillery:"Destilería La Cofradia (NOM 1137)", agave:"100% Blue Weber Agave", abv:"40%", shortDescription:"A rich and smooth highland añejo aged 14 months in American oak.", tastingNotes:"Vanilla, caramel, toasted oak, dried fruit and a long, silky finish.", story:"Casamigos' Añejo is aged for 14 months, producing a rich and accessible premium añejo.", funFact:"Casamigos Añejo was one of the first celebrity-backed tequilas to win serious critical acclaim.", recommendedServe:"Neat.", pairing:"Rich dishes, dark chocolate, aged cheeses.", houseTouch:"Ask your server for the best way to enjoy this pour.", source:"https://www.casamigos.com", needsReview:false },
+
+  { id:"patron-blanco",      name:"Patrón",       expression:"Blanco",    price:9,  priceType:"pour", image:"/assets/bottles/patron-blanco.jpg",      region:"Highlands", origin:"Atotonilco el Alto, Jalisco, Mexico", distillery:"Hacienda Patrón (NOM 1492)", agave:"100% Blue Weber Agave", abv:"40%", shortDescription:"The iconic premium highland blanco that helped define the ultra-premium tequila category globally.", tastingNotes:"Fresh agave, citrus, light pepper and a smooth, clean finish.", story:"Patrón was founded in 1989 and is credited with changing how the world perceived Mexican tequila — elevating it from a party shot to a premium spirit.", funFact:"Patrón bottles each bottle by hand at their estate distillery in the Jalisco highlands.", recommendedServe:"Neat, on the rocks or in premium cocktails.", pairing:"Light seafood, fresh flavors.", houseTouch:"Ask your server for the best way to enjoy this pour.", source:"https://www.patrontequila.com", needsReview:false },
+  { id:"patron-reposado",    name:"Patrón",       expression:"Reposado",  price:10, priceType:"pour", image:"/assets/bottles/patron-reposado.jpg",    region:"Highlands", origin:"Atotonilco el Alto, Jalisco, Mexico", distillery:"Hacienda Patrón (NOM 1492)", agave:"100% Blue Weber Agave", abv:"40%", shortDescription:"A smooth and refined highland reposado with balanced agave and gentle oak character.", tastingNotes:"Agave, vanilla, honey and a warm, refined finish.", story:"Patrón's Reposado rests in a combination of American, Hungarian and French oak barrels for at least 2 months.", funFact:"Patrón was acquired by Bacardi in 2018 for $5.1 billion.", recommendedServe:"Neat or on the rocks.", pairing:"Grilled chicken, mild cheeses.", houseTouch:"Ask your server for the best way to enjoy this pour.", source:"https://www.patrontequila.com", needsReview:false },
+];
+
+// ─────────────────────────────────────────────────────────────
+// MEZCAL SELECTION (straight pours)
+// ─────────────────────────────────────────────────────────────
+export const mezcalSelection = [
+  { id:"alipus-san-andres",    name:"Alipús San Andrés",      price:10, priceType:"pour", image:"/assets/bottles/alipus-san-andres.jpg",    agaveVariety:"Espadín", mezcalType:"Joven", origin:"San Andrés Miahuatlán, Oaxaca, Mexico", producer:"Grupo Los Danzantes", abv:"40%", cookingMethod:"Underground earthen pit roasting", shortDescription:"A classic Oaxacan joven mezcal with straightforward, approachable smoky character.", tastingNotes:"Light smoke, agave, citrus and a clean mineral finish.", story:"Alipús is produced in collaboration with local Oaxacan communities using traditional methods.", funFact:"Alipús produces multiple expressions, each named after the village where its master mezcalero is based.", recommendedServe:"Neat with orange and sal de gusano.", pairing:"Aged cheeses, chorizo, mole.", houseTouch:"Ask your server for the best way to enjoy this pour.", source:"https://www.grupolosdanzantes.com", needsReview:false },
+  { id:"alipus-san-juan",      name:"Alipús San Juan del Río", price:10, priceType:"pour", image:"/assets/bottles/alipus-san-juan.jpg",      agaveVariety:"Espadín", mezcalType:"Joven", origin:"San Juan del Río, Oaxaca, Mexico", producer:"Grupo Los Danzantes", abv:"40%", cookingMethod:"Underground earthen pit roasting", shortDescription:"A village expression with a slightly different character than San Andrés — mineral, smoky and earthy.", tastingNotes:"Smoke, mineral, cooked agave and a dry earthy finish.", story:"Each Alipús expression reflects the specific terroir and master mezcalero of its village of origin.", funFact:"San Juan del Río is known for producing mezcal with a distinctly mineral, dry character.", recommendedServe:"Neat.", pairing:"Earthy dishes, charcuterie.", houseTouch:"Ask your server for the best way to enjoy this pour.", source:"https://www.grupolosdanzantes.com", needsReview:false },
+  { id:"del-maguey-chichicapa", name:"Del Maguey Chichicapa",  price:16, priceType:"pour", image:"/assets/bottles/del-maguey-chichicapa.jpg", agaveVariety:"Espadín", mezcalType:"Joven", origin:"San Baltazar Chichicapam, Oaxaca, Mexico", producer:"Del Maguey Single Village Mezcal", abv:"46%", cookingMethod:"Underground earthen pit roasting, stone tahona milling", shortDescription:"One of Del Maguey's most complex village expressions — bold, smoky and deeply Oaxacan.", tastingNotes:"Dark fruit, coffee, deep smoke, roasted agave and a long, layered finish.", story:"Del Maguey pioneered the single-village mezcal category, working directly with indigenous communities to bring authentic mezcal to the world.", funFact:"Del Maguey founder Ron Cooper began importing mezcal in 1995 — before mezcal was known internationally.", recommendedServe:"Neat — slowly.", pairing:"Dark mole, smoked meats, aged cheese.", houseTouch:"Ask your server for the best way to enjoy this pour.", source:"https://www.delmaguey.com", needsReview:false },
+  { id:"del-maguey-vida",       name:"Del Maguey Vida",         price:9,  priceType:"pour", image:"/assets/bottles/del-maguey-vida.jpg",       agaveVariety:"Espadín", mezcalType:"Joven", origin:"San Luis del Río, Oaxaca, Mexico", producer:"Del Maguey Single Village Mezcal", abv:"42%", cookingMethod:"Underground earthen pit roasting", shortDescription:"Del Maguey's entry-level single village expression — approachable, balanced and genuinely artisanal.", tastingNotes:"Bright smoke, citrus, agave and a clean, fresh finish.", story:"Vida is Del Maguey's gateway expression — designed to introduce mezcal lovers to the single-village concept.", funFact:"'Vida' means 'life' in Spanish — a fitting name for a mezcal designed to open doors.", recommendedServe:"Neat or in craft cocktails.", pairing:"Citrus-forward dishes, light seafood.", houseTouch:"Ask your server for the best way to enjoy this pour.", source:"https://www.delmaguey.com", needsReview:false },
+  { id:"meteoro",               name:"Meteoro Mezcal",          price:8,  priceType:"pour", image:"/assets/bottles/meteoro.jpg",               agaveVariety:"Espadín", mezcalType:"Joven", origin:"Oaxaca, Mexico", producer:"Not publicly disclosed", abv:"40%", shortDescription:"An accessible and approachable joven mezcal with a clean, lightly smoky profile.", tastingNotes:"Light smoke, citrus, agave and a clean finish.", story:"Meteoro is designed to make mezcal accessible — a good entry point for those exploring the category.", funFact:"Meteoro's name references a shooting star — a moment of brightness and speed.", recommendedServe:"Neat or in mezcal cocktails.", pairing:"Light dishes, casual settings.", houseTouch:"Ask your server for the best way to enjoy this pour.", source:"", needsReview:true },
+  { id:"mezcalero-15",          name:"Mezcalero No. 15",        price:20, priceType:"pour", image:"/assets/bottles/mezcalero-15.jpg",          agaveVariety:"Varies by release", mezcalType:"Joven", origin:"Oaxaca, Mexico", producer:"S.A.C. (Single Artisan Collection)", abv:"Varies", shortDescription:"A numbered limited-release artisanal mezcal from a specific maestro mezcalero — rare and collector-level.", tastingNotes:"Varies by release — typically complex, layered and deeply smoky with unique agave character.", story:"The Mezcalero series documents the work of individual master mezcaleros, each numbered release representing a specific artisan's expression.", funFact:"Each Mezcalero release is unique and unrepeatable — when it's gone, it's gone.", recommendedServe:"Neat. This is a sipping mezcal.", pairing:"Fine dining, contemplative occasions.", houseTouch:"Ask your server for the best way to enjoy this pour.", source:"", needsReview:true },
+  { id:"mezcalero-17",          name:"Mezcalero No. 17",        price:20, priceType:"pour", image:"/assets/bottles/mezcalero-17.jpg",          agaveVariety:"Varies by release", mezcalType:"Joven", origin:"Oaxaca, Mexico", producer:"S.A.C. (Single Artisan Collection)", abv:"Varies", shortDescription:"Another numbered limited release from the celebrated Mezcalero artisan series.", tastingNotes:"Varies by release — expect rare character and artisanal depth.", story:"Like No. 15, Mezcalero No. 17 documents a specific maestro mezcalero's work and cannot be replicated.", funFact:"Mezcalero releases are named by number — not brand name — to keep the focus on the artisan.", recommendedServe:"Neat.", pairing:"Contemplative sipping, fine occasions.", houseTouch:"Ask your server for the best way to enjoy this pour.", source:"", needsReview:true },
+  { id:"bozal-espadin",         name:"Bozal Espadín",           price:7,  priceType:"pour", image:"/assets/bottles/bozal-espadin.jpg",         agaveVariety:"Espadín", mezcalType:"Joven", origin:"Santiago Matatlan, Oaxaca, Mexico", producer:"Bozal Mezcal", abv:"47%", shortDescription:"An approachable and honest Oaxacan joven mezcal with a clean, authentic character.", tastingNotes:"Smoke, fresh agave, citrus and a clean mineral finish.", story:"Bozal Mezcal works with small Oaxacan communities to produce traditional mezcal while preserving artisanal production methods.", funFact:"Santiago Matatlan is known as the 'Mezcal Capital of the World' — more mezcal is produced there than anywhere else.", recommendedServe:"Neat or in craft cocktails.", pairing:"Light Mexican food, grilled dishes.", houseTouch:"Ask your server for the best way to enjoy this pour.", source:"https://www.bozalmezcal.com", needsReview:false },
+  { id:"casamigos-mezcal",      name:"Casamigos Mezcal",        price:18, priceType:"pour", image:"/assets/bottles/casamigos-mezcal.jpg",      agaveVariety:"Espadín", mezcalType:"Joven", origin:"Oaxaca, Mexico", producer:"Casamigos / Diageo", abv:"40%", shortDescription:"A premium, smooth and approachable mezcal from the Casamigos brand.", tastingNotes:"Mild smoke, fresh agave, citrus and a clean, smooth finish.", story:"Casamigos extended their successful tequila brand into mezcal, creating an accessible premium expression.", funFact:"Casamigos Mezcal is intentionally approachable — designed for those new to the category.", recommendedServe:"Neat or in premium cocktails.", pairing:"Light dishes, casual sipping.", houseTouch:"Ask your server for the best way to enjoy this pour.", source:"https://www.casamigos.com", needsReview:false },
+  { id:"clase-azul-cenizo",     name:"Clase Azul Mezcal Cenizo", price:40, priceType:"pour", image:"/assets/bottles/clase-azul-cenizo.jpg",   agaveVariety:"Cenizo (Agave durangensis)", mezcalType:"Joven", origin:"Durango, Mexico", producer:"Clase Azul", abv:"40%", shortDescription:"An ultra-premium mezcal made from wild Cenizo agave from Durango — rare, complex and extraordinary.", tastingNotes:"Wild agave, deep smoke, mineral, dried fruit and a remarkably long, complex finish.", story:"Clase Azul Mezcal Cenizo uses wild Cenizo agave from the state of Durango — a significantly different agave variety from the typical Oaxacan Espadín.", funFact:"Cenizo (Agave durangensis) grows wild in the Durango highlands and takes many years to reach maturity.", recommendedServe:"Neat — slowly and with intention.", pairing:"Fine dining, the finest occasions.", houseTouch:"Ask your server for the best way to enjoy this pour.", source:"https://www.claseazul.com", needsReview:false },
+  { id:"ilegal-joven",          name:"Ilegal Joven",             price:10, priceType:"pour", image:"/assets/bottles/ilegal-joven.jpg",          agaveVariety:"Espadín", mezcalType:"Joven", origin:"San Agustín Amatengo, Oaxaca, Mexico", producer:"Ilegal Mezcal", abv:"40%", shortDescription:"A well-crafted and approachable joven mezcal with clean smoke and a fresh finish.", tastingNotes:"Light smoke, fresh agave, citrus and a clean, balanced finish.", story:"Ilegal Mezcal was founded by John Rexer, who originally smuggled the spirit from Oaxaca into his Antigua, Guatemala bar — hence the name.", funFact:"Before founding Ilegal, the creator was literally smuggling mezcal across borders because it wasn't commercially available.", recommendedServe:"Neat or in craft cocktails.", pairing:"Light Mexican food, fresh flavors.", houseTouch:"Ask your server for the best way to enjoy this pour.", source:"https://www.ilegalmezcal.com", needsReview:false },
+  { id:"ilegal-reposado",       name:"Ilegal Reposado",          price:12, priceType:"pour", image:"/assets/bottles/ilegal-reposado.jpg",       agaveVariety:"Espadín", mezcalType:"Reposado", origin:"San Agustín Amatengo, Oaxaca, Mexico", producer:"Ilegal Mezcal", abv:"40%", cookingMethod:"Underground earthen pit roasting", shortDescription:"A rested mezcal with gentle oak added to Ilegal's signature clean, smoky profile.", tastingNotes:"Mild smoke, vanilla, agave, light oak and a smooth balanced finish.", story:"Ilegal's Reposado rests in American white oak, adding soft complexity to the brand's clean Oaxacan character.", funFact:"Ilegal is one of the few mezcal brands to offer a widely distributed Reposado expression.", recommendedServe:"Neat or on the rocks.", pairing:"Mild dishes, aged cheeses.", houseTouch:"Ask your server for the best way to enjoy this pour.", source:"https://www.ilegalmezcal.com", needsReview:false },
+  { id:"cuatrocientos-conejos-pour", name:"400 Conejos",         price:8,  priceType:"pour", image:"/assets/bottles/400-conejos.jpg",          agaveVariety:"Espadín", mezcalType:"Joven", origin:"Oaxaca, Mexico", producer:"Casa Armando Guillermo Prieto (NOM O14X)", abv:"40%", shortDescription:"The same mezcal we use in our Bad Bunny cocktail — now available as a straight pour.", tastingNotes:"Soft smoke, tropical fruit, fresh agave and a clean, accessible finish.", story:"400 Conejos takes its name from the 400 gods of pulque in Aztec mythology — spirits of fermentation and celebration.", funFact:"This is the mezcal behind our signature Bad Bunny cocktail.", recommendedServe:"Neat or in our Bad Bunny cocktail.", pairing:"Tropical dishes, casual occasions.", houseTouch:"Ask your server for the best way to enjoy this pour.", source:"https://www.400conejos.com", needsReview:false },
+];
+
+// ─────────────────────────────────────────────────────────────
+// RED WINES
+// ─────────────────────────────────────────────────────────────
+export const redWines = [
+  { id:"house-cabernet", name:"House Cabernet", price:7, priceType:"glass", image:"/assets/bottles/house-cabernet.jpg", varietal:"Cabernet Sauvignon", region:"California, USA", country:"USA", body:"full", sweetnessLevel:"dry", shortDescription:"A reliable and enjoyable full-bodied Cabernet Sauvignon — our house red for everyday drinking.", tastingNotes:"Dark fruit, light oak and a smooth, approachable finish.", pairing:"Red meats, pasta, aged cheeses.", source:"House selection", needsReview:false },
+  { id:"house-blend",    name:"House Blend",    price:8, priceType:"glass", image:"/assets/bottles/house-blend.jpg",    varietal:"Red Blend",          region:"Various",        country:"USA", body:"medium", sweetnessLevel:"dry", shortDescription:"Our house red blend — smooth, versatile and food-friendly.", tastingNotes:"Mixed berries, soft tannins and a balanced, easy finish.", pairing:"Mexican dishes, grilled meats, casual fare.", source:"House selection", needsReview:false },
+  { id:"malbec",         name:"Malbec",         price:8, priceType:"glass", image:"/assets/bottles/malbec.jpg",         varietal:"Malbec",             region:"Mendoza",        country:"Argentina", body:"full", sweetnessLevel:"dry", shortDescription:"A rich and plummy Argentine Malbec with the bold fruit character the region is known for.", tastingNotes:"Dark plum, blackberry, chocolate and a smooth, velvety finish.", pairing:"Grilled meats, barbecue, hard cheeses.", source:"", needsReview:true },
+  { id:"red-blend",      name:"Red Blend",      price:10, priceType:"glass", image:"/assets/bottles/red-blend.jpg",    varietal:"Proprietary Blend",  region:"Varies",         country:"Varies", body:"medium", sweetnessLevel:"dry", shortDescription:"A premium red blend with complexity and balance — our step-up house option.", tastingNotes:"Dark fruit, spice, mild tannins and a refined, lingering finish.", pairing:"Fine dining, rich dishes.", source:"", needsReview:true },
+];
+
+// ─────────────────────────────────────────────────────────────
+// BOURBON & WHISKEY
+// Note: all prices are owner-review estimates
+// ─────────────────────────────────────────────────────────────
+export const bourbonWhiskey = [
+  { id:"jim-beam",         name:"Jim Beam",         price:7,  priceType:"pour", needsOwnerReview:true, image:"/assets/bottles/jim-beam.jpg",         type:"Kentucky Straight Bourbon", origin:"Clermont, Kentucky, USA", distillery:"James B. Beam Distilling Co.", mashBill:"77% corn, 13% rye, 10% malted barley (approx.)", ageStatement:"4 years minimum", abv:"40%", shortDescription:"America's #1 selling bourbon. Smooth, approachable and widely loved.", aromaNotes:"Vanilla, caramel, grain.", tastingNotes:"Vanilla, oak, light caramel and a clean, straightforward finish.", finish:"Medium, warm and clean.", story:"Jim Beam has been distilled by the Beam family for seven generations, making it one of the oldest and most trusted bourbon brands in the world.", recommendedServe:"On the rocks or in classic cocktails.", pairing:"BBQ, burgers, casual fare.", source:"https://www.jimbeam.com", needsReview:false },
+  { id:"jack-daniels",     name:"Jack Daniel's",    price:8,  priceType:"pour", needsOwnerReview:true, image:"/assets/bottles/jack-daniels.jpg",     type:"Tennessee Whiskey", origin:"Lynchburg, Tennessee, USA", distillery:"Jack Daniel Distillery", mashBill:"80% corn, 8% rye, 12% malted barley (approx.)", ageStatement:"Not stated", abv:"40%", shortDescription:"The world's best-selling American whiskey — filtered through sugar maple charcoal for a distinctively smooth character.", aromaNotes:"Vanilla, banana, toasted oak.", tastingNotes:"Vanilla, caramel, light fruit and a smooth, charcoal-filtered finish.", finish:"Medium, sweet and mellow.", story:"Jack Daniel established his distillery in 1875 in Lynchburg, Tennessee. The charcoal mellowing process — known as the Lincoln County Process — is what distinguishes Tennessee Whiskey from bourbon.", funFact:"Lynchburg, Tennessee — where Jack Daniel's is made — is a dry county. The whiskey is produced there but cannot be sold locally.", recommendedServe:"On the rocks, neat or in a Jack & Coke.", pairing:"BBQ, smoked meats.", source:"https://www.jackdaniels.com", needsReview:false },
+  { id:"wild-turkey",      name:"Wild Turkey",      price:8,  priceType:"pour", needsOwnerReview:true, image:"/assets/bottles/wild-turkey.jpg",      type:"Kentucky Straight Bourbon", origin:"Lawrenceburg, Kentucky, USA", distillery:"Wild Turkey Distillery", mashBill:"75% corn, 13% rye, 12% malted barley (approx.)", ageStatement:"Minimum 6 years", abv:"40.5%", shortDescription:"A bold, high-rye bourbon with a distinctly robust character and long finish.", aromaNotes:"Caramel, vanilla, rye spice, oak.", tastingNotes:"Caramel, vanilla, bold rye spice and a long, warming finish.", finish:"Long and spicy.", story:"Wild Turkey has been made at the same distillery since 1940. Master Distiller Jimmy Russell has worked there for over 60 years — one of the longest tenures in the whiskey industry.", funFact:"Jimmy Russell, Wild Turkey's Master Distiller, has been making bourbon since 1954 — over 70 years of experience.", recommendedServe:"Neat, on the rocks or in an Old Fashioned.", pairing:"Grilled meats, hearty dishes.", source:"https://www.wildturkeybourbon.com", needsReview:false },
+  { id:"makers-mark",      name:"Maker's Mark",     price:9,  priceType:"pour", needsOwnerReview:true, image:"/assets/bottles/makers-mark.jpg",      type:"Kentucky Straight Bourbon", origin:"Loretto, Kentucky, USA", distillery:"Maker's Mark Distillery", mashBill:"70% corn, 16% soft red winter wheat, 14% malted barley", ageStatement:"Not stated", abv:"45%", shortDescription:"A wheat-forward bourbon known for its smooth, sweet character — a favorite for first-time bourbon drinkers.", aromaNotes:"Vanilla, caramel, fruit, butterscotch.", tastingNotes:"Caramel, vanilla, fruit, wheat sweetness and a smooth, approachable finish.", finish:"Medium, sweet and clean.", story:"Maker's Mark replaced rye with soft red winter wheat in its recipe, creating a distinctively smoother and sweeter bourbon profile.", funFact:"Every bottle of Maker's Mark is hand-dipped in red wax at the distillery — a tradition that's been unchanged since 1958.", recommendedServe:"Neat, on the rocks or in a whiskey sour.", pairing:"Light grilled dishes, mild cheeses.", source:"https://www.makersmark.com", needsReview:false },
+  { id:"buffalo-trace",    name:"Buffalo Trace",    price:10, priceType:"pour", needsOwnerReview:true, image:"/assets/bottles/buffalo-trace.jpg",    type:"Kentucky Straight Bourbon", origin:"Frankfort, Kentucky, USA", distillery:"Buffalo Trace Distillery", mashBill:"Not disclosed", ageStatement:"Not stated", abv:"45%", shortDescription:"An award-winning Kentucky bourbon from one of America's oldest continuously operating distilleries.", aromaNotes:"Vanilla, mint, molasses, fresh fruit.", tastingNotes:"Vanilla, caramel, brown sugar, light spice and a clean, long finish.", finish:"Long, smooth and refined.", story:"Buffalo Trace has been distilling continuously since 1787 — making it one of the oldest distilleries in the United States. It survived Prohibition by operating under a 'medicinal purposes' permit.", funFact:"Buffalo Trace Distillery is a National Historic Landmark — one of only a few distilleries to hold that designation.", recommendedServe:"Neat or on the rocks.", pairing:"Red meats, dark chocolate, pecan pie.", source:"https://www.buffalotracedistillery.com", needsReview:false },
+  { id:"woodford-reserve", name:"Woodford Reserve", price:11, priceType:"pour", needsOwnerReview:true, image:"/assets/bottles/woodford-reserve.jpg", type:"Kentucky Straight Bourbon", origin:"Versailles, Kentucky, USA", distillery:"Woodford Reserve Distillery (Brown-Forman)", mashBill:"72% corn, 18% rye, 10% malted barley", ageStatement:"Not stated", abv:"45.2%", shortDescription:"A refined and complex small-batch bourbon crafted at a historic limestone distillery in Kentucky's bluegrass heartland.", aromaNotes:"Rich dried fruit, vanilla, toasted oak, chocolate.", tastingNotes:"Dried fruit, vanilla, chocolate, spice and a long, refined finish.", finish:"Long, warm and complex.", story:"Woodford Reserve is produced at the Labrot & Graham Distillery, established in 1812 — one of the most storied sites in Kentucky bourbon history.", funFact:"Woodford Reserve is the official bourbon of the Kentucky Derby and has been since 1999.", recommendedServe:"Neat or in premium cocktails.", pairing:"Rich dishes, aged cheeses, dark chocolate.", source:"https://www.woodfordreserve.com", needsReview:false },
+  { id:"blantons",         name:"Blanton's",        price:18, priceType:"pour", needsOwnerReview:true, image:"/assets/bottles/blantons.jpg",         type:"Single Barrel Kentucky Straight Bourbon", origin:"Frankfort, Kentucky, USA", distillery:"Buffalo Trace Distillery", mashBill:"Not disclosed (Buffalo Trace Mash Bill #2, approx. higher rye)", ageStatement:"Not stated", abv:"46.5%", shortDescription:"The world's first commercially available single-barrel bourbon — a collector's icon with a distinctive bottle stopper.", aromaNotes:"Orange, vanilla, caramel, spice, notes of nutmeg.", tastingNotes:"Rich caramel, orange peel, vanilla, spice and a long, layered finish.", finish:"Long, warm, complex and memorable.", story:"Blanton's was introduced in 1984 as the world's first single-barrel bourbon — each barrel producing a unique expression. The distinctive bottle stopper features a jockey on horseback in one of eight unique poses.", funFact:"Collecting all 8 Blanton's bottle stoppers that spell B-L-A-N-T-O-N-S when arranged together is a popular hobby among enthusiasts.", recommendedServe:"Neat — this bourbon deserves full attention.", pairing:"Premium cigars, aged cheeses, refined occasions.", source:"https://www.blantonsbourbon.com", needsReview:false },
+];
+
+// ─────────────────────────────────────────────────────────────
+// VODKA & GIN
+// Note: all prices are owner-review estimates
+// ─────────────────────────────────────────────────────────────
+export const vodkaGin = [
+  { id:"titos",           name:"Tito's",           price:7,  priceType:"pour", needsOwnerReview:true, image:"/assets/bottles/titos.jpg",           type:"Craft Vodka", origin:"Austin, Texas, USA", producer:"Fifth Generation Inc.", baseIngredient:"Corn", abv:"40%", shortDescription:"America's #1 selling vodka — gluten-free, corn-based and distilled 6 times for exceptional smoothness.", tastingNotes:"Clean, smooth, light sweetness and a neutral, crisp finish.", story:"Tito's was founded in 1997 when Bert 'Tito' Beveridge handcrafted his first batch in Austin, Texas, making it one of the original American craft vodkas.", funFact:"Tito's was the first legal distillery in Texas and is certified gluten-free.", recommendedServe:"On the rocks, in cocktails or in a classic vodka soda.", pairing:"Light appetizers, sushi, seafood.", source:"https://www.titosvodka.com", needsReview:false },
+  { id:"ketel-one",       name:"Ketel One",        price:8,  priceType:"pour", needsOwnerReview:true, image:"/assets/bottles/ketel-one.jpg",       type:"Dutch Wheat Vodka", origin:"Schiedam, Netherlands", producer:"Nolet Distillery", baseIngredient:"Wheat", abv:"40%", shortDescription:"A premium Dutch vodka distilled in copper pot stills — crisp, clean and remarkably smooth.", tastingNotes:"Light citrus, grain, clean crispness and a smooth, dry finish.", story:"Ketel One has been produced by the Nolet family for over 325 years — one of the oldest distilling families in the world.", funFact:"The name 'Ketel One' refers to the original copper pot still — 'distilleerketel #1' — that Nolet has used since the 1800s.", recommendedServe:"Chilled neat, on the rocks or in a martini.", pairing:"Oysters, smoked salmon, light appetizers.", source:"https://www.ketelone.com", needsReview:false },
+  { id:"tanqueray",       name:"Tanqueray",        price:8,  priceType:"pour", needsOwnerReview:true, image:"/assets/bottles/tanqueray.jpg",       type:"London Dry Gin", origin:"Scotland (distilled) / London, England (origin)", producer:"Diageo", botanicals:"Juniper, coriander, angelica root, licorice", abv:"43.1%", shortDescription:"A classic London Dry Gin with a bold, juniper-forward character. The standard-bearer of the style.", tastingNotes:"Juniper, citrus, warm spice and a clean, crisp finish.", story:"Charles Tanqueray created his gin recipe in 1830 in London. Of all the gin recipes he experimented with, only one survives — and it's still used today.", funFact:"Tanqueray's signature recipe has barely changed since 1830.", recommendedServe:"In a classic G&T or dry martini.", pairing:"Light appetizers, fresh flavors.", source:"https://www.tanqueray.com", needsReview:false },
+  { id:"bombay-sapphire", name:"Bombay Sapphire",  price:8,  priceType:"pour", needsOwnerReview:true, image:"/assets/bottles/bombay-sapphire.jpg", type:"London Dry Gin", origin:"Hampshire, England", producer:"Bacardi", botanicals:"Juniper, lemon peel, grains of paradise, angelica, coriander, cassia bark, orris, almonds, licorice, cubeb berries (10 botanicals)", abv:"47%", shortDescription:"An elegant London Dry Gin known for its distinctive blue bottle and unique vapor-infusion of 10 botanicals.", tastingNotes:"Juniper, citrus, floral notes, warm spice and a clean, balanced finish.", story:"Bombay Sapphire uses a unique vapor-infusion process where alcohol passes through a basket of 10 botanicals instead of being distilled with them — resulting in a lighter, more aromatic spirit.", funFact:"The 10 botanicals in Bombay Sapphire come from 8 different countries.", recommendedServe:"In a premium G&T with quality tonic.", pairing:"Light seafood, fresh appetizers.", source:"https://www.bombaysapphire.com", needsReview:false },
+  { id:"grey-goose",      name:"Grey Goose",       price:10, priceType:"pour", needsOwnerReview:true, image:"/assets/bottles/grey-goose.jpg",      type:"French Wheat Vodka", origin:"Cognac, France", producer:"Bacardi", baseIngredient:"Soft winter wheat from Picardy, France", abv:"40%", shortDescription:"A premium French vodka distilled from the finest soft winter wheat and naturally filtered through limestone.", tastingNotes:"Clean, soft sweetness, light almond and a smooth, refined finish.", story:"Grey Goose was created in 1997 by Sidney Frank specifically for the American ultra-premium market. It quickly became the defining luxury vodka of the late 1990s and 2000s.", funFact:"Grey Goose was sold to Bacardi in 2004 for $2.2 billion — Sidney Frank had owned the brand for only 7 years.", recommendedServe:"Chilled neat, on the rocks or in a premium martini.", pairing:"Caviar, oysters, fine dining occasions.", source:"https://www.greygoose.com", needsReview:false },
+  { id:"hendricks",       name:"Hendrick's",       price:10, priceType:"pour", needsOwnerReview:true, image:"/assets/bottles/hendricks.jpg",       type:"Scottish Gin", origin:"Girvan, Scotland", producer:"William Grant & Sons", botanicals:"11 botanicals including juniper, rose, cucumber, elderflower, chamomile, plus others undisclosed", abv:"41.4%", shortDescription:"Scotland's most eccentric gin — infused with rose and cucumber for a distinctly floral, refreshing character.", tastingNotes:"Floral rose, fresh cucumber, soft juniper and a clean, refreshing finish.", story:"Hendrick's was launched in 1999 with a novel approach: adding rose and cucumber to the distillate, creating a gin unlike any London Dry before it.", funFact:"Hendrick's is distilled in two different stills — a Bennett still and a Carter-Head still — then combined for a unique flavor profile.", recommendedServe:"In a G&T with cucumber and tonic, or in a Hendrick's martini.", pairing:"Cucumber sandwiches, delicate seafood, garden salads.", source:"https://www.hendricksgin.com", needsReview:false },
+];
+
+// ─────────────────────────────────────────────────────────────
+// HAPPY ENDINGS
+// ─────────────────────────────────────────────────────────────
+export const happyEndings = [
+  {
+    id: "carajillo",
+    name: "Carajillo",
+    price: 8,
+    priceType: "drink",
+    image: "/assets/drinks/carajillo.jpg",
+    tags: ["Classic", "Premium"],
+    ingredients: ["Licor 43", "Fresh espresso shot"],
+    shortDescription: "A Spanish-Mexican after-dinner classic. Licor 43's vanilla sweetness meets a rich, hot espresso shot.",
+    preparation: "A fresh espresso shot is poured directly over Licor 43 in a glass. The coffee slowly sinks and layers through the liqueur — stir gently before drinking or enjoy the layers as they naturally blend.",
+    story: "The Carajillo has roots in Spanish coffee culture and was adopted enthusiastically by Mexican bar culture, where it became a beloved after-dinner drink. In Mexico, it's almost always made with Licor 43.",
+    funFact: "Licor 43 is named after its 43 ingredients — a blend of fruits, herbs and spices whose exact recipe has been kept secret since 1946.",
+    pairing: "Chocolate desserts, flan, churros.",
+    houseTouch: "Made with a fresh espresso shot — always to order.",
+    source: "",
+    needsReview: false,
+    responsibleMessage: "Please enjoy responsibly. Do not drink and drive.",
+  },
+  {
+    id: "el-chapulin",
+    name: "El Chapulín",
+    price: 8,
+    priceType: "drink",
+    image: "/assets/drinks/el-chapulin.jpg",
+    tags: ["House Favorite", "Bold"],
+    ingredients: ["1 oz Mezcal", "1 oz Crème de menthe", "1 oz Heavy cream", "1 oz Crème de cacao", "Mexican chocolate garnish"],
+    shortDescription: "Our signature after-dinner cocktail. Smoky mezcal meets the cooling sweetness of mint and the richness of chocolate cream.",
+    preparation: "All ingredients shaken hard with ice and strained into a chilled glass. Garnished with Mexican chocolate.",
+    story: "El Chapulín is our house creation — a drink that embodies the spirit of Chapulines Tequila Bar: bold, unexpected and unapologetically Mexican.",
+    funFact: "Chapulines — grasshoppers — are a traditional Oaxacan ingredient, just as mezcal is. This cocktail brings both worlds together in a glass.",
+    pairing: "Mexican chocolate desserts, tres leches, dark chocolate.",
+    houseTouch: "Our signature ending — built with our house mezcal for a smooth bar finish.",
+    source: "",
+    needsReview: false,
+    responsibleMessage: "Please enjoy responsibly. Do not drink and drive.",
+  },
+];
