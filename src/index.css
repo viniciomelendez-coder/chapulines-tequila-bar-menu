@@ -15,21 +15,37 @@
 @layer utilities {
   .scrollbar-none { -ms-overflow-style: none; scrollbar-width: none; }
   .scrollbar-none::-webkit-scrollbar { display: none; }
+
   .bg-grid {
-  background-image:
-    linear-gradient(rgba(45,184,75,0.045) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(45,184,75,0.035) 1px, transparent 1px);
-  background-size: 32px 32px;
-  animation: grid-drift 22s linear infinite;
+    background-image:
+      radial-gradient(circle at 20% 20%, rgba(45,184,75,0.16) 0%, transparent 22%),
+      linear-gradient(120deg, transparent 0%, rgba(45,184,75,0.10) 45%, transparent 60%),
+      linear-gradient(rgba(45,184,75,0.055) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(45,184,75,0.045) 1px, transparent 1px);
+    background-size:
+      420px 420px,
+      520px 520px,
+      32px 32px,
+      32px 32px;
+    animation: grid-glow 10s ease-in-out infinite alternate;
+  }
+
+  .active\:scale-97:active { transform: scale(0.97); }
 }
 
-@keyframes grid-drift {
+@keyframes grid-glow {
   0% {
-    background-position: 0 0;
+    background-position:
+      0px 0px,
+      -280px -280px,
+      0px 0px,
+      0px 0px;
   }
   100% {
-    background-position: 32px 32px;
+    background-position:
+      90px 130px,
+      280px 280px,
+      16px 16px,
+      16px 16px;
   }
-}
-  .active\:scale-97:active { transform: scale(0.97); }
 }
