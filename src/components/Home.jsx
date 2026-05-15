@@ -56,7 +56,7 @@ export default function Home({ categories, onSelect }) {
               </div>
             </div>
           )}
-<p className="font-display italic text-agave/85 text-2xl tracking-wide drop-shadow-sm">
+<p className="font-display italic text-agave/85 text-lg tracking-wide drop-shadow-sm">
   — Salud Amigos! —
 </p>
         </div>
