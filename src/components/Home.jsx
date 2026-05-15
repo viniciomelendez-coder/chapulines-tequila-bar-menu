@@ -56,7 +56,9 @@ export default function Home({ categories, onSelect }) {
               </div>
             </div>
           )}
-          <p className="font-display italic text-cream/30 text-xs tracking-wider">— Drink Menu —</p>
+<p className="font-display italic text-agave/85 text-2xl tracking-wide drop-shadow-sm">
+  — Para brindar bonito —
+</p>
         </div>
 
         {/* CATEGORY GRID */}
