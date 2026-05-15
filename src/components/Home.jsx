@@ -39,7 +39,7 @@ export default function Home({ categories, onSelect }) {
             <img
               src="/assets/logo.png"
               alt="Chapulines Tequila Bar"
-              className="w-28 h-28 object-contain mx-auto mb-4"
+              className="w-[260px] max-w-[85vw] h-auto object-contain mx-auto mb-5 opacity-95"
               onError={() => setLogoFailed(true)}
             />
           ) : (
