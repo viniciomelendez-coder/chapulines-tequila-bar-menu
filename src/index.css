@@ -17,35 +17,49 @@
   .scrollbar-none::-webkit-scrollbar { display: none; }
 
   .bg-grid {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
     background-image:
-      radial-gradient(circle at 50% 18%, rgba(45,184,75,0.18) 0%, rgba(45,184,75,0.08) 22%, transparent 48%),
-      linear-gradient(rgba(45,184,75,0.045) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(45,184,75,0.038) 1px, transparent 1px);
-    background-size:
-      100% 100%,
-      32px 32px,
-      32px 32px;
-    background-repeat:
-      no-repeat,
-      repeat,
-      repeat;
-    animation: grid-glow 8s ease-in-out infinite alternate;
+      linear-gradient(rgba(45,184,75,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(45,184,75,0.035) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+
+  .bg-grid::before {
+    content: "";
+    position: absolute;
+    inset: -25%;
+    z-index: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(circle at 28% 20%, rgba(45,184,75,0.16), transparent 26%),
+      radial-gradient(circle at 70% 32%, rgba(45,184,75,0.10), transparent 24%),
+      radial-gradient(circle at 48% 72%, rgba(45,184,75,0.08), transparent 28%);
+    filter: blur(22px);
+    opacity: 0.55;
+    animation: ambient-glow 14s ease-in-out infinite alternate;
+  }
+
+  .bg-grid > * {
+    position: relative;
+    z-index: 1;
   }
 
   .active\:scale-97:active { transform: scale(0.97); }
 }
 
-@keyframes grid-glow {
+@keyframes ambient-glow {
   0% {
-    background-position:
-      50% -40px,
-      0px 0px,
-      0px 0px;
+    transform: translate3d(-18px, -10px, 0) scale(1);
+    opacity: 0.42;
+  }
+  50% {
+    transform: translate3d(12px, 14px, 0) scale(1.03);
+    opacity: 0.68;
   }
   100% {
-    background-position:
-      50% 70px,
-      8px 8px,
-      8px 8px;
+    transform: translate3d(22px, -6px, 0) scale(1.01);
+    opacity: 0.50;
   }
 }
