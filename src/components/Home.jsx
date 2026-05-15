@@ -17,7 +17,7 @@ function CategoryIcon({ src, label }) {
       src={src}
       alt=""
       onError={() => setFailed(true)}
-      className="w-17 h-17 object-contain mb-3 opacity-95"
+      className="w-16 h-16 object-contain mb-3 opacity-95"
     />
   );
 }
