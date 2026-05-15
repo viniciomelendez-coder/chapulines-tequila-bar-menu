@@ -50,7 +50,7 @@ export default function BottleDetail({ item, categoryId, onBack }) {
       <div className="relative w-full h-56 bg-carbon-700 overflow-hidden">
         {!imgFailed ? (
           <img src={item.image} alt={item.name}
-               className="w-full h-full object-cover opacity-45"
+               className="w-full h-full object-cover opacity-70"
                onError={() => setImgFailed(true)} />
         ) : (
           <div className="w-full h-full flex items-center justify-center">
@@ -59,7 +59,7 @@ export default function BottleDetail({ item, categoryId, onBack }) {
             </div>
           </div>
         )}
-        <div className="absolute inset-0 bg-gradient-to-t from-carbon via-carbon/55 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-carbon/90 via-carbon/35 to-transparent" />
 
         <button onClick={onBack}
                 className="absolute top-4 left-4 w-9 h-9 rounded-full bg-carbon/75 border border-white/10
