@@ -1,190 +1,156 @@
-# 🦗 Chapulines Tequila Bar — Menú Digital Interactivo
+# 🦗 Chapulines Tequila Bar — Menú Digital v2
 
-Proyecto React + Vite + Tailwind CSS para el menú digital interactivo de Chapulines Tequila Bar.
+Rediseño premium oscuro. React + Vite + Tailwind CSS.
 
 ---
 
-## 🚀 Instalación y uso local
+## 🚀 Instalación
 
 ```bash
-# 1. Instalar dependencias
 npm install
-
-# 2. Correr en modo desarrollo
 npm run dev
-
-# 3. Abrir en el navegador
-# http://localhost:5173
+# → http://localhost:5173
 ```
 
 ---
 
-## 📁 Estructura del proyecto
+## 📁 Carpetas que debes crear en tu proyecto
 
 ```
-chapulines-menu/
-├── public/
-│   └── assets/
-│       ├── logo.png          ← TU LOGO aquí (reemplazar)
-│       └── drinks/           ← FOTOS de bebidas aquí
-│           ├── zenzonte-paloma.jpg
-│           ├── michelada.jpg
-│           └── ... (ver lista abajo)
-├── src/
-│   ├── data/
-│   │   └── menu.js           ← TODOS los datos del menú
-│   ├── components/
-│   │   ├── Home.jsx
-│   │   ├── CategoryPage.jsx
-│   │   ├── DrinkCard.jsx
-│   │   ├── BeerCard.jsx
-│   │   ├── DrinkDetail.jsx
-│   │   └── BeerDetail.jsx
-│   ├── App.jsx
-│   ├── main.jsx
-│   └── index.css
-├── index.html
-├── package.json
-├── tailwind.config.js
-├── vite.config.js
-└── postcss.config.js
+public/
+└── assets/
+    ├── logo.png              ← Tu logo principal
+    ├── icons/
+    │   ├── tragos.png        ← Ícono de Los Tragos
+    │   ├── margaritas.png    ← Ícono de Margaritas
+    │   ├── mezcal.png        ← Ícono de Mezcal Drinks
+    │   └── cervezas.png      ← Ícono de Cervezas
+    └── drinks/
+        ├── zenzonte-paloma.jpg
+        ├── michelada.jpg
+        ├── cantarito.jpg
+        ├── old-fashion.jpg
+        ├── zenzonte-water.jpg
+        ├── vampiro.jpg
+        ├── charro-negro.jpg
+        ├── acapulco-de-noche.jpg
+        ├── frozen-margarita.jpg
+        ├── skinny-margarita.jpg
+        ├── black-berrie.jpg
+        ├── spicy-margarita.jpg
+        ├── sassy-rita.jpg
+        ├── presidente-margarita.jpg
+        ├── jp-cadillac.jpg
+        ├── mezcalita.jpg
+        ├── bad-bunny.jpg
+        ├── spicy-mezcalita.jpg
+        ├── oaxaca-mule.jpg
+        ├── yee-haw.jpg
+        ├── modelo.jpg
+        ├── xx-amber.jpg
+        ├── pacifico.jpg
+        ├── ultra.jpg
+        ├── local-ipa.jpg
+        ├── corona.jpg
+        ├── negra-modelo.jpg
+        ├── local-porter.jpg
+        ├── local-lager.jpg
+        ├── victoria.jpg
+        ├── tecate.jpg
+        ├── bohemia.jpg
+        ├── bud-light.jpg
+        └── miller-lite.jpg
 ```
 
 ---
 
 ## 🖼️ Cómo reemplazar el logo
 
-1. Guarda tu logo como **PNG con fondo transparente**
-2. Nómbralo exactamente: `logo.png`
+1. Guarda tu logo como PNG con fondo transparente
+2. Nómbralo: `logo.png`
 3. Colócalo en: `public/assets/logo.png`
+4. El diseño lo toma automáticamente. Si no existe, muestra el texto elegante de fallback.
 
-Tamaño recomendado: **400×400px** o más grande (se escala automático).
+---
+
+## 🎨 Cómo reemplazar íconos de categorías
+
+1. Crea tus íconos en PNG o SVG (recomendado: monocromático blanco/crema o verde)
+2. Tamaño recomendado: 128×128px o más grande
+3. Nómbralos y colócalos en `public/assets/icons/`:
+   - `tragos.png`
+   - `margaritas.png`
+   - `mezcal.png`
+   - `cervezas.png`
+
+Si no existen, el diseño muestra un fallback elegante con la inicial de la categoría.
 
 ---
 
 ## 📸 Cómo agregar fotos de bebidas
 
-Cada bebida tiene un campo `image` en `src/data/menu.js`.
+1. Toma fotografías de las bebidas (luz natural, fondo oscuro recomendado)
+2. Exporta en JPG, mínimo 800×600px
+3. Nómbralas según la lista de arriba
+4. Colócalas en `public/assets/drinks/`
 
-Para agregar fotos reales:
-1. Toma o consigue fotografías de cada bebida
-2. Nómbralas exactamente igual que el campo `image` en el archivo de datos
-3. Colócalas en `public/assets/drinks/`
-
-**Lista de imágenes necesarias:**
-
-### Los Tragos
-- `zenzonte-paloma.jpg`
-- `michelada.jpg`
-- `cantarito.jpg`
-- `old-fashion.jpg`
-- `zenzonte-water.jpg`
-- `vampiro.jpg`
-- `charro-negro.jpg`
-- `acapulco-de-noche.jpg`
-
-### Margaritas
-- `frozen-margarita.jpg`
-- `skinny-margarita.jpg`
-- `black-berrie.jpg`
-- `spicy-margarita.jpg`
-- `sassy-rita.jpg`
-- `presidente-margarita.jpg`
-- `jp-cadillac.jpg`
-
-### Mezcal Drinks
-- `mezcalita.jpg`
-- `bad-bunny.jpg`
-- `spicy-mezcalita.jpg`
-- `oaxaca-mule.jpg`
-
-### Cervezas Draft
-- `yee-haw.jpg`
-- `modelo.jpg`
-- `xx-amber.jpg`
-- `pacifico.jpg`
-- `ultra.jpg`
-- `local-ipa.jpg`
-
-### Cervezas Bottles & Cans
-- `corona.jpg`
-- `negra-modelo.jpg`
-- `local-porter.jpg`
-- `local-lager.jpg`
-- `victoria.jpg`
-- `tecate.jpg`
-- `bohemia.jpg`
-- `bud-light.jpg`
-- `miller-lite.jpg`
-
-**Formato recomendado:** JPG, 800×600px mínimo, relación 4:3.
+Si una bebida no tiene foto, el diseño muestra un placeholder oscuro elegante con la inicial de la bebida.
 
 ---
 
-## ✏️ Cómo editar precios e ingredientes
+## 🎨 Cómo cambiar los colores principales
 
-Abre `src/data/menu.js` y modifica los campos directamente:
+Edita `tailwind.config.js`:
 
 ```js
-{
-  name: "Zenzonte Paloma",
-  price: 9,                    // ← Cambia el precio aquí
-  ingredients: ["..."],        // ← Cambia ingredientes aquí
-  description: "...",          // ← Cambia descripción aquí
+colors: {
+  carbon:  { DEFAULT: "#141414", 800: "#1a1a1a", 700: "#222222" },
+  agave:   { DEFAULT: "#2db84b" },   // ← color verde principal
+  cream:   { DEFAULT: "#f0e6cc" },   // ← color de textos
+  gold:    { DEFAULT: "#c9973a" },   // ← acentos dorados
+  chili:   { DEFAULT: "#b83232" },   // ← acentos rojos/picante
 }
 ```
 
 ---
 
-## 🌐 Publicar en Netlify (gratis)
+## ✏️ Cómo editar precios, bebidas e ingredientes
 
-### Opción A — Drag & Drop (más fácil)
-```bash
-npm run build          # Genera la carpeta "dist/"
-```
-Luego ve a [app.netlify.com](https://app.netlify.com), arrastra la carpeta `dist/` y listo.
+Solo edita: `src/data/menu.js`
 
-### Opción B — GitHub + Netlify (recomendado para actualizaciones)
-1. Sube el proyecto a GitHub
-2. En Netlify: "Add new site" → "Import from Git"
-3. Selecciona tu repo
-4. Build command: `npm run build`
-5. Publish directory: `dist`
-6. Click "Deploy"
-
----
-
-## 🌐 Publicar en Vercel (gratis)
-
-```bash
-npm install -g vercel  # Instalar Vercel CLI
-vercel                 # Seguir instrucciones
+```js
+{
+  name: "Zenzonte Paloma",
+  price: 9,              // ← cambia precio
+  ingredients: ["..."],  // ← cambia ingredientes
+}
 ```
 
-O conecta tu repo de GitHub en [vercel.com](https://vercel.com) — detecta Vite automáticamente.
+---
+
+## 🚀 Subir cambios a GitHub → Vercel actualiza automáticamente
+
+```bash
+git add .
+git commit -m "Actualizo precios y fotos"
+git push
+```
+
+Vercel detecta el push y hace deploy automáticamente en ~1 minuto.
 
 ---
 
-## 📱 Generar el código QR
+## 📱 Generar código QR
 
-Una vez que tengas tu URL publicada (ej: `chapulines-menu.netlify.app`):
-
-1. Ve a [qr-code-generator.com](https://www.qr-code-generator.com) o similar
-2. Pega tu URL
-3. Personaliza los colores (verde agave #2a6535 recomendado)
-4. Descarga en alta resolución para imprimir
+Una vez publicado en Vercel:
+1. Ve a [qr-code-generator.com](https://www.qr-code-generator.com)
+2. Pega tu URL de Vercel
+3. Color recomendado: verde agave `#2db84b` sobre fondo oscuro
+4. Descarga en PNG alta resolución para impresión
 
 ---
 
-## 🛠️ Tecnologías
+## 🛠️ Stack
 
-- [React 18](https://react.dev)
-- [Vite 4](https://vitejs.dev)
-- [Tailwind CSS 3](https://tailwindcss.com)
+- React 18 · Vite 4 · Tailwind CSS 3
 - Fuentes: Playfair Display + Lato (Google Fonts)
-
----
-
-## 📞 Soporte
-
-Para actualizar precios, agregar bebidas o cambiar fotos — edita solo el archivo `src/data/menu.js`.

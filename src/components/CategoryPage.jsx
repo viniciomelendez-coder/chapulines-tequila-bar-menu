@@ -2,33 +2,16 @@ import { useState } from "react";
 import DrinkCard from "./DrinkCard.jsx";
 import BeerCard from "./BeerCard.jsx";
 
-const TAG_COLORS = {
-  Fresh:          "bg-agave/10 text-agave border-agave/30",
-  Spicy:          "bg-chili/10 text-chili border-chili/30",
-  Classic:        "bg-gold/10 text-gold-dark border-gold/30",
-  Premium:        "bg-bark/10 text-bark border-bark/30",
-  "House Favorite": "bg-agave/20 text-agave-dark border-agave",
-  Tropical:       "bg-gold/10 text-gold-dark border-gold/30",
-  Smoky:          "bg-bark/10 text-bark border-bark/30",
-  Floral:         "bg-chili/10 text-chili border-chili/30",
-  Bold:           "bg-bark/20 text-bark border-bark/40",
-  Light:          "bg-cream-dark/30 text-bark/60 border-bark/20",
-  Frozen:         "bg-agave/10 text-agave border-agave/30",
-};
-
 export default function CategoryPage({
   categoryId, categories, allDrinks, cervezas, onBack, onDrinkClick,
 }) {
   const cat = categories.find((c) => c.id === categoryId);
+  const drinks = categoryId === "cervezas" ? null : allDrinks[categoryId] || [];
   const [activeFilter, setActiveFilter] = useState("All");
 
-  // Collect drinks for this category
-  const drinks = categoryId === "cervezas" ? null : allDrinks[categoryId] || [];
-
-  // Collect all tags
-  const allTags = ["All", ...(drinks
-    ? [...new Set(drinks.flatMap((d) => d.tags))]
-    : [])];
+  const allTags = drinks
+    ? ["All", ...new Set(drinks.flatMap((d) => d.tags))]
+    : [];
 
   const filtered = !drinks
     ? drinks
@@ -37,35 +20,46 @@ export default function CategoryPage({
     : drinks.filter((d) => d.tags.includes(activeFilter));
 
   return (
-    <div className="min-h-screen flex flex-col">
-      {/* Header */}
-      <div className="bg-agave px-5 pt-4 pb-7 relative">
-        <button onClick={onBack} className="text-gold text-xs font-bold tracking-widest uppercase mb-3 flex items-center gap-1">
-          ← Back
+    <div className="min-h-screen flex flex-col bg-carbon">
+
+      {/* HEADER */}
+      <div className="bg-carbon-800 border-b border-white/5 px-5 pt-5 pb-6 relative">
+        <button
+          onClick={onBack}
+          className="flex items-center gap-2 text-agave text-xs font-bold
+                     tracking-widest uppercase mb-4 press"
+        >
+          <span className="text-base leading-none">←</span> Menu
         </button>
-        <div className="flex items-center gap-3">
-          <span className="text-4xl">{cat?.emoji}</span>
+        <div className="flex items-center gap-4">
+          <div className="w-10 h-10 rounded-full border border-agave/30 flex items-center justify-center shrink-0">
+            <span className="text-agave text-lg font-display font-bold">
+              {cat?.label?.[0] ?? "C"}
+            </span>
+          </div>
           <div>
-            <h2 className="font-display font-bold text-gold text-3xl leading-none">{cat?.label}</h2>
-            <p className="font-display italic text-white/60 text-sm">{cat?.subtitle}</p>
+            <h2 className="font-display font-bold text-cream text-3xl leading-none">
+              {cat?.label}
+            </h2>
+            <p className="font-display italic text-cream/35 text-sm mt-0.5">
+              {cat?.subtitle}
+            </p>
           </div>
         </div>
-        {/* Wave bottom */}
-        <div className="absolute bottom-0 left-0 right-0 h-3 bg-cream"
-             style={{ clipPath: "polygon(0 100%, 100% 100%, 100% 0)" }} />
       </div>
 
-      {/* Filter Tags (not for cervezas) */}
+      {/* FILTER TAGS */}
       {drinks && allTags.length > 2 && (
-        <div className="flex gap-2 px-4 pt-4 pb-1 overflow-x-auto scrollbar-none">
+        <div className="flex gap-2 px-4 pt-4 pb-1 overflow-x-auto scrollbar-none bg-carbon-800">
           {allTags.map((tag) => (
             <button
               key={tag}
               onClick={() => setActiveFilter(tag)}
-              className={`shrink-0 text-xs font-bold px-3 py-1 rounded-full border transition-all
+              className={`shrink-0 text-[11px] font-bold px-3 py-1.5 rounded-full border transition-all press
                 ${activeFilter === tag
-                  ? "bg-agave text-white border-agave"
-                  : "bg-white text-bark/60 border-bark/20"}`}
+                  ? "bg-agave text-carbon border-agave"
+                  : "bg-transparent text-cream/40 border-white/10 hover:border-agave/30"
+                }`}
             >
               {tag}
             </button>
@@ -73,15 +67,15 @@ export default function CategoryPage({
         </div>
       )}
 
-      {/* Drink list */}
-      <div className="flex-1 px-4 pt-4 pb-16 space-y-3 max-w-xl mx-auto w-full">
+      {/* LIST */}
+      <div className="flex-1 px-4 pt-4 pb-24 space-y-2.5 max-w-xl mx-auto w-full">
         {categoryId === "cervezas" ? (
           <>
-            <p className="font-display italic text-bark/50 text-sm mb-1">🍻 On Draft</p>
+            <SectionLabel>On Draft</SectionLabel>
             {cervezas.draft.map((b) => (
               <BeerCard key={b.id} beer={b} onClick={() => onDrinkClick(b, true)} />
             ))}
-            <p className="font-display italic text-bark/50 text-sm mt-4 mb-1">🍾 Bottles & Cans</p>
+            <SectionLabel className="mt-6">Bottles &amp; Cans</SectionLabel>
             {cervezas.bottles.map((b) => (
               <BeerCard key={b.id} beer={b} onClick={() => onDrinkClick(b, true)} />
             ))}
@@ -93,10 +87,23 @@ export default function CategoryPage({
         )}
       </div>
 
-      {/* Sticky footer */}
-      <div className="sticky bottom-0 bg-agave text-center py-2 text-gold/70 text-xs font-bold tracking-widest uppercase">
-        Chapulines Tequila Bar · ¡Salud!
+      {/* FOOTER */}
+      <div className="fixed bottom-0 left-0 right-0 bg-carbon-800 border-t border-white/5
+                      text-center py-2.5 text-cream/20 text-[10px] font-body tracking-[0.3em] uppercase z-10">
+        Chapulines Tequila Bar
       </div>
+    </div>
+  );
+}
+
+function SectionLabel({ children, className = "" }) {
+  return (
+    <div className={`flex items-center gap-3 py-2 ${className}`}>
+      <span className="h-px flex-1 bg-white/8" />
+      <span className="text-[10px] text-cream/30 font-bold tracking-[0.3em] uppercase font-body">
+        {children}
+      </span>
+      <span className="h-px flex-1 bg-white/8" />
     </div>
   );
 }

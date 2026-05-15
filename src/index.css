@@ -5,10 +5,14 @@
 @layer base {
   html {
     -webkit-tap-highlight-color: transparent;
+    scroll-behavior: smooth;
   }
   body {
-    @apply bg-cream text-bark;
+    background-color: #141414;
+    color: #f0e6cc;
+    font-family: 'Lato', system-ui, sans-serif;
     overscroll-behavior: none;
+    -webkit-font-smoothing: antialiased;
   }
 }
 
@@ -17,7 +21,19 @@
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
-  .scrollbar-none::-webkit-scrollbar {
-    display: none;
+  .scrollbar-none::-webkit-scrollbar { display: none; }
+
+  /* subtle grid texture overlay */
+  .bg-grid {
+    background-image:
+      linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+    background-size: 32px 32px;
   }
+
+  /* card press animation */
+  .press {
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .press:active { transform: scale(0.97); }
 }
