@@ -62,9 +62,9 @@ export default function CategoryPage({
       <div className="bg-carbon-800 border-b border-white/5 px-5 pt-5 pb-6">
         <button
           onClick={onBack}
-          className="flex items-center gap-2 text-agave text-[10px] font-bold
-                     tracking-[0.2em] uppercase mb-4 active:opacity-60 transition-opacity"
-        >
+         className="flex items-center gap-2 text-agave text-sm font-bold
+           tracking-[0.22em] uppercase mb-5 active:opacity-60 transition-opacity
+           py-2 pr-4"
           ← Menu
         </button>
         <div className="flex items-center gap-4">
