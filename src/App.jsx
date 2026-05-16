@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   categories,
   signatureCocktails,
@@ -44,7 +44,11 @@ export default function App() {
   const [detailCatId, setDetailCatId]       = useState(null);
   // navigation stack for back button after spirit link
   const [prevState, setPrevState]           = useState(null);
-
+useEffect(() => {
+  window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+  document.documentElement.scrollTop = 0;
+  document.body.scrollTop = 0;
+}, [view, activeCategory, activeItem?.id]);
   function openCategory(id) {
     setActiveCategory(id);
     setView("category");
