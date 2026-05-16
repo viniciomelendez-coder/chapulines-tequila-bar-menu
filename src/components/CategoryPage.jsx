@@ -68,7 +68,6 @@ export default function CategoryPage({
           ← Menu
         </button>
         <div className="flex items-center">
-         <div className="flex items-center">
   <div>
     <h2 className="font-display font-bold text-cream text-2xl leading-none">
       {cat?.label}
@@ -78,15 +77,6 @@ export default function CategoryPage({
     </p>
   </div>
 </div>
-          <div>
-            <h2 className="font-display font-bold text-cream text-2xl leading-none">
-              {cat?.label}
-            </h2>
-            <p className="font-display italic text-cream/30 text-xs mt-0.5">
-              {cat?.subtitle}
-            </p>
-          </div>
-        </div>
       </div>
 
       {/* SEARCH (bottles + tequilas + spirits) */}
