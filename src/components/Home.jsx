@@ -57,7 +57,7 @@ export default function Home({ categories, onSelect }) {
             </div>
           )}
 <p className="font-display italic text-agave/85 text-2xl tracking-wide drop-shadow-sm">
-  — Salud Amigos! —
+  — Arriva, Abajo, pal centro y pa dentro —
 </p>
         </div>
 
