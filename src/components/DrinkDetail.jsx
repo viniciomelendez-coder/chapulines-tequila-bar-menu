@@ -109,11 +109,16 @@ export default function DrinkDetail({ drink, onBack, onSpiritLink }) {
         )}
         <div className="absolute inset-0 bg-gradient-to-t from-carbon via-carbon/55 to-transparent" />
 
-        <button onClick={onBack}
-                className="absolute top-4 left-4 w-9 h-9 rounded-full bg-carbon/75 border border-white/10
-                           flex items-center justify-center text-cream/60 text-lg active:opacity-60">
-          ‹
-        </button>
+      <button
+  onClick={onBack}
+  className="absolute top-4 left-4 z-20 inline-flex items-center gap-2 rounded-full
+             bg-carbon/80 border border-white/10 px-4 py-2
+             text-cream/85 text-sm font-bold backdrop-blur-sm
+             active:opacity-70 transition-all"
+>
+  <span className="text-lg leading-none">←</span>
+  <span className="tracking-wide">Back</span>
+</button>
         <div className="absolute top-4 right-4 bg-agave text-carbon font-bold text-lg px-3 py-1 rounded-sm font-body">
           <span className="text-xs align-super">$</span>
           {drink.price ?? (drink.priceNote ?? "—")}
