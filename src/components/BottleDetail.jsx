@@ -50,7 +50,7 @@ export default function BottleDetail({ item, categoryId, onBack }) {
       <div className="relative w-full h-56 bg-carbon-700 overflow-hidden">
         {!imgFailed ? (
           <img src={item.image} alt={item.name}
-               className="w-full h-full object-cover opacity-80"
+               className="w-full h-full object-cover opacity-90"
                onError={() => setImgFailed(true)} />
         ) : (
           <div className="w-full h-full flex items-center justify-center">
