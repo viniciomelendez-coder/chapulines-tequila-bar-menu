@@ -62,17 +62,22 @@ export default function CategoryPage({
       <div className="bg-carbon-800 border-b border-white/5 px-5 pt-5 pb-6">
         <button
           onClick={onBack}
-         className="flex items-center gap-2 text-agave text-sm font-bold
+         className="flex items-center gap-3 text-agave text-base font-bold
            tracking-[0.22em] uppercase mb-5 active:opacity-60 transition-opacity
-           py-2 pr-4"
+           py-3 pr-5"
           ← Menu
         </button>
-        <div className="flex items-center gap-4">
-          <div className="w-9 h-9 rounded-full border border-agave/25 flex items-center justify-center shrink-0">
-            <span className="text-agave text-sm font-display font-bold">
-              {cat?.label?.[0] ?? "C"}
-            </span>
-          </div>
+        <div className="flex items-center">
+         <div className="flex items-center">
+  <div>
+    <h2 className="font-display font-bold text-cream text-2xl leading-none">
+      {cat?.label}
+    </h2>
+    <p className="font-display italic text-cream/30 text-xs mt-0.5">
+      {cat?.subtitle}
+    </p>
+  </div>
+</div>
           <div>
             <h2 className="font-display font-bold text-cream text-2xl leading-none">
               {cat?.label}
