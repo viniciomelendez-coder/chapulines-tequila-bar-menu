@@ -65,7 +65,8 @@ export default function CategoryPage({
          className="flex items-center gap-3 text-agave text-base font-bold
            tracking-[0.22em] uppercase mb-5 active:opacity-60 transition-opacity
            py-3 pr-5"
-          ← Menu
+         >
+ ← Menu
         </button>
         <div className="flex items-center">
   <div>
